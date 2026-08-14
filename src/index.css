@@ -283,6 +283,11 @@ button, input {
   margin-bottom: 32px;
 }
 
+.explanation h2 {
+  font-size: 1.05rem;
+  margin: 0 0 12px;
+}
+
 .playground {
   display: flex;
   flex-direction: column;
@@ -419,6 +424,64 @@ button, input {
   align-items: center;
   justify-content: center;
   font-size: 0.85rem;
+}
+
+.vigenere-square-wrap {
+  overflow: auto;
+  max-height: 420px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.vigenere-square {
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.vigenere-square th,
+.vigenere-square td {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  text-align: center;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+}
+
+.vigenere-square thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  color: var(--text-h);
+  background: var(--code-bg);
+}
+
+.vigenere-square .corner-cell {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  font-size: 0.68rem;
+  color: var(--text);
+}
+
+.vigenere-square .row-header {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  color: var(--text-h);
+  background: var(--code-bg);
+}
+
+.vigenere-square .square-row.active .row-header,
+.vigenere-square .square-row.active td {
+  background: var(--accent-bg);
+}
+
+.vigenere-square .square-row.active .row-header {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .result-box {

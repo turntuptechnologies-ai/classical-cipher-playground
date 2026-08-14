@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
-import { normalizeKey, vigenereDecode, vigenereEncode, vigenereSteps } from "../ciphers/vigenere";
+import { normalizeKey, uniqueKeyLetters, vigenereDecode, vigenereEncode, vigenereSteps } from "../ciphers/vigenere";
 import ModeToggle, { type CipherMode } from "../components/ModeToggle";
 import CopyButton from "../components/CopyButton";
+import VigenereSquare from "../components/VigenereSquare";
 
 const DEFAULT_TEXT = "HELLO CLASSICAL CIPHER";
 const DEFAULT_KEY = "KEY";
@@ -23,6 +24,8 @@ export default function VigenerePage() {
     [input, key, mode],
   );
 
+  const activeKeyLetters = useMemo(() => uniqueKeyLetters(key), [key]);
+
   return (
     <article className="cipher-page">
       <header className="cipher-page-header">
@@ -41,6 +44,18 @@ export default function VigenerePage() {
           1文字ごとにずらし数が変わるため、単一換字式暗号を破った頻度分析が効きにくくなります。
           19世紀半ばまで解読法が見つからず、「解読不能な暗号（le chiffre indéchiffrable）」と呼ばれていました。
         </p>
+      </section>
+
+      <section className="explanation">
+        <h2>ヴィジュネル方陣（tabula recta）</h2>
+        <p>
+          実際の暗号化は、26×26のこの表を使って手計算できます。<strong>行を鍵の文字</strong>、
+          <strong>列を平文の文字</strong>として選び、その交点にある文字が暗号文になります
+          （復号はこの逆で、鍵の行の中から暗号文の文字を探し、その列見出しが平文になります）。
+          下の表では、いま入力している鍵に含まれる文字の行を赤色でハイライトしています。
+          行ごとに違うアルファベットの並び（＝ずらし数の異なるシーザー暗号）を使っていることが視覚的にわかります。
+        </p>
+        <VigenereSquare activeKeyLetters={activeKeyLetters} />
       </section>
 
       <section className="playground">

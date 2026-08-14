@@ -49,6 +49,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
+    id: "geometric",
+    path: "/geometric",
+    name: "図形転置式暗号",
+    era: "転置式暗号の基本形",
+    tagline: "升目に書き込んだ文字を、列・斜め・渦巻きなど異なるルートで読み出して並べ替える暗号",
+    type: "転置式",
+  },
+  {
     id: "scytale",
     path: "/scytale",
     name: "スキュタレー暗号",

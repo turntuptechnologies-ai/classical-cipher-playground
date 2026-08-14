@@ -748,6 +748,12 @@ button, input {
   font-weight: 600;
 }
 
+.rail-cell.order-cell {
+  background: var(--code-bg);
+  color: var(--text);
+  font-weight: 500;
+}
+
 .note-text {
   font-size: 0.82rem;
   color: var(--text);

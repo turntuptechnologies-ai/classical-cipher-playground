@@ -90,6 +90,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
+    id: "columnar",
+    path: "/columnar",
+    name: "列転置暗号",
+    era: "19世紀ごろ 発展の時期は諸説あり",
+    tagline: "キーワードのアルファベット順で列の読み出し順を決める転置式暗号。ADFGVX暗号の土台にもなった",
+    type: "転置式",
+  },
+  {
     id: "playfair",
     path: "/playfair",
     name: "プレイフェア暗号",

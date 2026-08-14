@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { railFenceDecode, railFenceEncode, railFenceGrid } from "../ciphers/railfence";
 import ModeToggle, { type CipherMode } from "../components/ModeToggle";
 import CopyButton from "../components/CopyButton";
@@ -37,7 +38,7 @@ export default function RailFencePage() {
         </p>
         <p>
           仕組みは単純ですが、置き換え表を持たない転置式暗号の代表例として、
-          後のより複雑な暗号（列転置暗号など）の基礎になりました。鍵は「レールの本数」だけです。
+          後のより複雑な暗号（<Link to="/columnar" className="cipher-link">列転置暗号</Link>など）の基礎になりました。鍵は「レールの本数」だけです。
         </p>
       </section>
 

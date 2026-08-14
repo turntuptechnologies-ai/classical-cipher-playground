@@ -9,6 +9,7 @@ import UesugiPage from "./pages/UesugiPage";
 import EnigmaPage from "./pages/EnigmaPage";
 import ScytalePage from "./pages/ScytalePage";
 import GeometricPage from "./pages/GeometricPage";
+import AtbashPage from "./pages/AtbashPage";
 import ChallengesPage from "./pages/ChallengesPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
 
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/enigma" element={<EnigmaPage />} />
           <Route path="/scytale" element={<ScytalePage />} />
           <Route path="/geometric" element={<GeometricPage />} />
+          <Route path="/atbash" element={<AtbashPage />} />
           <Route path="/challenges" element={<ChallengesPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
         </Route>

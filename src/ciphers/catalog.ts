@@ -17,6 +17,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
+    id: "atbash",
+    path: "/atbash",
+    name: "アトバシュ暗号",
+    era: "紀元前〜 古代ヘブライ",
+    tagline: "A↔Z, B↔Yのようにアルファベットを反転させるだけの、鍵を持たない最古級の暗号",
+    type: "換字式",
+  },
+  {
     id: "substitution",
     path: "/substitution",
     name: "単一換字式暗号",

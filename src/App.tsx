@@ -12,6 +12,7 @@ import GeometricPage from "./pages/GeometricPage";
 import AtbashPage from "./pages/AtbashPage";
 import PigpenPage from "./pages/PigpenPage";
 import PlayfairPage from "./pages/PlayfairPage";
+import AdfgvxPage from "./pages/AdfgvxPage";
 import ChallengesPage from "./pages/ChallengesPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
 
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/atbash" element={<AtbashPage />} />
           <Route path="/pigpen" element={<PigpenPage />} />
           <Route path="/playfair" element={<PlayfairPage />} />
+          <Route path="/adfgvx" element={<AdfgvxPage />} />
           <Route path="/challenges" element={<ChallengesPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
         </Route>

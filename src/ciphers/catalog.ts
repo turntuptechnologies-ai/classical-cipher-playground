@@ -26,6 +26,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "転置式",
   },
   {
+    id: "polybius",
+    path: "/polybius",
+    name: "ポリュビオス暗号",
+    era: "紀元前2世紀ごろ 古代ギリシャ",
+    tagline: "アルファベットを5×5の表に並べ、行と列の数字の組で表す座標式の元祖",
+    type: "換字式",
+  },
+  {
     id: "geometric",
     path: "/geometric",
     name: "図形転置式暗号",

@@ -92,20 +92,15 @@ export default function VigenerePage() {
           <div className="steps-table-wrap">
             <p className="steps-caption">文字ごとの変換過程（先頭 {Math.min(steps.length, 40)} 文字）</p>
             <table className="steps-table">
-              <thead>
-                <tr>
-                  <th>{mode === "encode" ? "平文" : "暗号文"}</th>
-                  <th>鍵</th>
-                  <th>{mode === "encode" ? "暗号文" : "平文"}</th>
-                </tr>
-              </thead>
               <tbody>
                 <tr>
+                  <th scope="row">{mode === "encode" ? "平文" : "暗号文"}</th>
                   {steps.slice(0, 40).map((s, i) => (
                     <td key={i}>{s.char.toUpperCase()}</td>
                   ))}
                 </tr>
                 <tr>
+                  <th scope="row">鍵</th>
                   {steps.slice(0, 40).map((s, i) => (
                     <td key={i} className="key-cell">
                       {s.keyChar}
@@ -113,6 +108,7 @@ export default function VigenerePage() {
                   ))}
                 </tr>
                 <tr>
+                  <th scope="row">{mode === "encode" ? "暗号文" : "平文"}</th>
                   {steps.slice(0, 40).map((s, i) => (
                     <td key={i} className="result-cell">
                       {s.result.toUpperCase()}

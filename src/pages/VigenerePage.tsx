@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { normalizeKey, uniqueKeyLetters, vigenereDecode, vigenereEncode, vigenereSteps } from "../ciphers/vigenere";
 import ModeToggle, { type CipherMode } from "../components/ModeToggle";
 import CopyButton from "../components/CopyButton";
@@ -35,13 +36,13 @@ export default function VigenerePage() {
 
       <section className="explanation">
         <p>
-          シーザー暗号は「ずらし数」が文章全体で固定でした。ヴィジュネル暗号は、
+          <Link to="/caesar" className="cipher-link">シーザー暗号</Link>は「ずらし数」が文章全体で固定でした。ヴィジュネル暗号は、
           <strong>鍵となる単語を繰り返し文章に重ね</strong>、鍵の1文字ごとに違うずらし数を使います。
           例えば鍵が <code>KEY</code> なら、1文字目は K（10）、2文字目は E（4）、3文字目は Y（24）だけずらし、
           4文字目でまた K に戻ります。
         </p>
         <p>
-          1文字ごとにずらし数が変わるため、単一換字式暗号を破った頻度分析が効きにくくなります。
+          1文字ごとにずらし数が変わるため、<Link to="/substitution" className="cipher-link">単一換字式暗号</Link>を破った頻度分析が効きにくくなります。
           19世紀半ばまで解読法が見つからず、「解読不能な暗号（le chiffre indéchiffrable）」と呼ばれていました。
         </p>
       </section>
@@ -53,7 +54,7 @@ export default function VigenerePage() {
           <strong>列を平文の文字</strong>として選び、その交点にある文字が暗号文になります
           （復号はこの逆で、鍵の行の中から暗号文の文字を探し、その列見出しが平文になります）。
           下の表では、いま入力している鍵に含まれる文字の行を赤色でハイライトしています。
-          行ごとに違うアルファベットの並び（＝ずらし数の異なるシーザー暗号）を使っていることが視覚的にわかります。
+          行ごとに違うアルファベットの並び（＝ずらし数の異なる<Link to="/caesar" className="cipher-link">シーザー暗号</Link>）を使っていることが視覚的にわかります。
         </p>
         <VigenereSquare activeKeyLetters={activeKeyLetters} />
       </section>

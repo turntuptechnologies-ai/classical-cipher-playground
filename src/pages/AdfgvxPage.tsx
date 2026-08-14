@@ -42,7 +42,8 @@ export default function AdfgvxPage() {
           （この6文字は、モールス信号で送ったときに聞き間違えにくいという理由で選ばれました）。
           次に、その結果を<strong>別の鍵（転置鍵）で列の順番を並べ替える</strong>
           <Link to="/columnar" className="cipher-link">列転置暗号</Link>にかけます。
-          上杉暗号のような座標変換と、図形転置式暗号のような並べ替えを組み合わせた、いわば合わせ技です。
+          <Link to="/uesugi" className="cipher-link">上杉暗号</Link>のような座標変換と、
+          <Link to="/geometric" className="cipher-link">図形転置式暗号</Link>のような並べ替えを組み合わせた、いわば合わせ技です。
         </p>
         <p className="note-text">
           ※ フランスの暗号解読者ジョルジュ・パンヴァンがこの暗号を解読したことは、
@@ -101,7 +102,9 @@ export default function AdfgvxPage() {
         )}
 
         <div className="playfair-grid-wrap">
-          <p className="steps-caption">6×6のポリュビオス方陣（方陣の鍵から生成）</p>
+          <p className="steps-caption">
+            6×6の<Link to="/polybius" className="cipher-link">ポリュビオス</Link>方陣（方陣の鍵から生成）
+          </p>
           <table className="uesugi-grid">
             <thead>
               <tr>

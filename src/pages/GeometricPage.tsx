@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ROUTE_LABEL,
   geometricDecode,
@@ -40,7 +41,10 @@ export default function GeometricPage() {
     <article className="cipher-page">
       <header className="cipher-page-header">
         <h1>図形転置式暗号</h1>
-        <p className="cipher-page-era">転置式暗号の基本形（スキュタレー暗号・レールフェンス暗号の仲間）</p>
+        <p className="cipher-page-era">
+          転置式暗号の基本形（<Link to="/scytale" className="cipher-link">スキュタレー暗号</Link>・
+          <Link to="/railfence" className="cipher-link">レールフェンス暗号</Link>の仲間）
+        </p>
       </header>
 
       <section className="explanation">
@@ -50,7 +54,7 @@ export default function GeometricPage() {
           読み出し方（ルート）自体が鍵になり、キーワードは使いません。
         </p>
         <p>
-          「列読み（縦方向にそのまま読む）」はスキュタレー暗号とまったく同じ仕組みです。
+          「列読み（縦方向にそのまま読む）」は<Link to="/scytale" className="cipher-link">スキュタレー暗号</Link>とまったく同じ仕組みです。
           このページでは、それに加えて「斜め読み」「渦巻き読み」というルートも試せます。
           升目の作り方や読み方を変えるだけで、同じ平文からまったく違う暗号文が作れることを体感してみましょう。
         </p>

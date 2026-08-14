@@ -27,11 +27,14 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="roadmap">
-        <h2>今後追加予定</h2>
-        <ul>
-          <li>暗号解読チャレンジ（ヒント付きでciphertextを解読する問題）</li>
-        </ul>
+      <section className="challenge-cta">
+        <div>
+          <h2>ひととおり試したら、解読チャレンジに挑戦してみましょう</h2>
+          <p>学んだ暗号を使って、実際に暗号文を解読するミニパズルです。ヒントは段階的に開示されます。</p>
+        </div>
+        <Link to="/challenges" className="cipher-cta">
+          チャレンジ一覧へ →
+        </Link>
       </section>
     </div>
   );

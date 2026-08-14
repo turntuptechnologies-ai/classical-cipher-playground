@@ -240,22 +240,39 @@ button, input {
   color: var(--accent);
 }
 
-.roadmap {
+.type-badge.difficulty-easy {
+  background: var(--ok-bg);
+  color: var(--ok);
+}
+
+.type-badge.difficulty-hard {
+  background: var(--error-bg);
+  color: var(--error);
+}
+
+.challenge-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   border-top: 1px dashed var(--border);
   padding-top: 24px;
 }
 
-.roadmap h2 {
+.challenge-cta h2 {
   font-size: 1.1rem;
+  margin: 0 0 6px;
 }
 
-.roadmap ul {
-  padding-left: 20px;
+.challenge-cta p {
   color: var(--text);
+  font-size: 0.9rem;
 }
 
-.roadmap li {
-  margin-bottom: 6px;
+.challenge-cta .cipher-cta {
+  white-space: nowrap;
+  font-size: 0.95rem;
 }
 
 /* ---- cipher page ---- */
@@ -273,6 +290,49 @@ button, input {
   font-size: 0.85rem;
   color: var(--text);
   opacity: 0.75;
+}
+
+.cipher-page-era .type-badge {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.cipher-link {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+}
+
+.explanation-lead {
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.solved-badge {
+  color: var(--ok);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.hint-area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.hint-text {
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 10px 14px;
 }
 
 .explanation {

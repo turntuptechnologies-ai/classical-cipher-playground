@@ -1,0 +1,84 @@
+import { describe, expect, it } from "vitest";
+import { caesarDecode } from "../ciphers/caesar";
+import { enigmaProcess, type EnigmaSettings } from "../ciphers/enigma";
+import { railFenceDecode } from "../ciphers/railfence";
+import { substitutionDecode } from "../ciphers/substitution";
+import { uesugiDecode } from "../ciphers/uesugi";
+import { vigenereDecode } from "../ciphers/vigenere";
+import { CHALLENGES, isCorrectAnswer, normalizeAnswer } from "./data";
+
+describe("challenge ciphertexts decode to their stated answer with the hinted parameters", () => {
+  it("caesar-1 (shift 7, matches the hint)", () => {
+    const c = CHALLENGES.find((x) => x.id === "caesar-1")!;
+    expect(caesarDecode(c.ciphertext, 7)).toBe(c.answer);
+  });
+
+  it("railfence-1 (4 rails, matches the hint)", () => {
+    const c = CHALLENGES.find((x) => x.id === "railfence-1")!;
+    expect(railFenceDecode(c.ciphertext, 4)).toBe(c.answer);
+  });
+
+  it("uesugi-1 (no key needed)", () => {
+    const c = CHALLENGES.find((x) => x.id === "uesugi-1")!;
+    expect(uesugiDecode(c.ciphertext)).toBe(c.answer);
+  });
+
+  it("substitution-1 (key from the hint)", () => {
+    const c = CHALLENGES.find((x) => x.id === "substitution-1")!;
+    expect(substitutionDecode(c.ciphertext, "QWERTYUIOPASDFGHJKLZXCVBNM")).toBe(c.answer);
+  });
+
+  it("vigenere-1 (key GOLD from the hint)", () => {
+    const c = CHALLENGES.find((x) => x.id === "vigenere-1")!;
+    expect(vigenereDecode(c.ciphertext, "GOLD")).toBe(c.answer);
+  });
+
+  it("enigma-1 (settings from the hint)", () => {
+    const c = CHALLENGES.find((x) => x.id === "enigma-1")!;
+    const settings: EnigmaSettings = {
+      rotorIds: ["II", "IV", "V"],
+      ringSettings: [1, 5, 3], // B, F, D
+      positions: [23, 24, 25], // X, Y, Z
+    };
+    expect(enigmaProcess(c.ciphertext, settings, "QW ER TY").output).toBe(c.answer);
+  });
+
+  it("every challenge has at least one hint and a non-empty answer", () => {
+    for (const c of CHALLENGES) {
+      expect(c.hints.length).toBeGreaterThan(0);
+      expect(c.answer.length).toBeGreaterThan(0);
+      expect(c.ciphertext.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("challenge ids are unique", () => {
+    const ids = CHALLENGES.map((c) => c.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+});
+
+describe("isCorrectAnswer", () => {
+  const challenge = CHALLENGES[0];
+
+  it("accepts the exact answer", () => {
+    expect(isCorrectAnswer(challenge, challenge.answer)).toBe(true);
+  });
+
+  it("is case-insensitive and ignores spacing", () => {
+    expect(isCorrectAnswer(challenge, challenge.answer.toLowerCase().split(" ").join("  "))).toBe(true);
+  });
+
+  it("rejects an empty guess", () => {
+    expect(isCorrectAnswer(challenge, "   ")).toBe(false);
+  });
+
+  it("rejects a wrong guess", () => {
+    expect(isCorrectAnswer(challenge, "totally wrong")).toBe(false);
+  });
+});
+
+describe("normalizeAnswer", () => {
+  it("keeps kana and kanji", () => {
+    expect(normalizeAnswer("のろし！")).toBe("のろし");
+  });
+});

@@ -18,6 +18,9 @@ export default function Layout() {
               {cipher.name}
             </NavLink>
           ))}
+          <NavLink to="/challenges" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+            🏆 チャレンジ
+          </NavLink>
         </nav>
       </header>
 

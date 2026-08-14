@@ -82,6 +82,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
+    id: "playfair",
+    path: "/playfair",
+    name: "プレイフェア暗号",
+    era: "1854年 イギリス",
+    tagline: "2文字のペアを5×5の表で一度に置き換える。ボア戦争や二度の世界大戦で実際に使われた",
+    type: "換字式",
+  },
+  {
     id: "enigma",
     path: "/enigma",
     name: "エニグマ暗号",

@@ -40,4 +40,12 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     tagline: "文字の並び替え（転置）で読めなくする、線路のようにジグザグに書く暗号",
     type: "転置式",
   },
+  {
+    id: "uesugi",
+    path: "/uesugi",
+    name: "上杉暗号",
+    era: "戦国時代（伝）宇佐美定行考案説",
+    tagline: "いろは48文字を7×7の表に並べ、行と列の番号の組で文字を表す日本の陣中暗号",
+    type: "換字式",
+  },
 ];

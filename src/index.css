@@ -602,6 +602,54 @@ button, input {
   font-weight: 600;
 }
 
+.note-text {
+  font-size: 0.82rem;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.uesugi-grid-wrap {
+  overflow-x: auto;
+}
+
+.uesugi-grid {
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.uesugi-grid th,
+.uesugi-grid td {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  text-align: center;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+}
+
+.uesugi-grid thead th {
+  color: var(--text-h);
+  background: var(--code-bg);
+  font-size: 0.85rem;
+}
+
+.uesugi-grid tbody th {
+  color: var(--text-h);
+  background: var(--code-bg);
+  font-size: 0.85rem;
+}
+
+.uesugi-grid .corner-cell {
+  font-size: 0.68rem;
+  color: var(--text);
+}
+
+.uesugi-cell.active {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 700;
+}
+
 @media (max-width: 640px) {
   .site-header {
     padding: 16px;

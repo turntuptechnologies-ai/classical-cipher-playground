@@ -5,6 +5,7 @@ import CaesarPage from "./pages/CaesarPage";
 import SubstitutionPage from "./pages/SubstitutionPage";
 import VigenerePage from "./pages/VigenerePage";
 import RailFencePage from "./pages/RailFencePage";
+import UesugiPage from "./pages/UesugiPage";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/substitution" element={<SubstitutionPage />} />
           <Route path="/vigenere" element={<VigenerePage />} />
           <Route path="/railfence" element={<RailFencePage />} />
+          <Route path="/uesugi" element={<UesugiPage />} />
         </Route>
       </Routes>
     </HashRouter>

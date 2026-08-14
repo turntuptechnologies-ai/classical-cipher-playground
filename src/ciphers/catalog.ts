@@ -7,21 +7,46 @@ export interface CipherInfo {
   type: "換字式" | "転置式";
 }
 
+// 暗号が生まれたとされる時代の古い順に並べている（諸説あるため、あくまで目安）
 export const CIPHER_CATALOG: CipherInfo[] = [
-  {
-    id: "caesar",
-    path: "/caesar",
-    name: "シーザー暗号",
-    era: "紀元前1世紀 古代ローマ",
-    tagline: "アルファベットを一定数だけずらすだけの、暗号史上もっとも有名な暗号",
-    type: "換字式",
-  },
   {
     id: "atbash",
     path: "/atbash",
     name: "アトバシュ暗号",
     era: "紀元前〜 古代ヘブライ",
     tagline: "A↔Z, B↔Yのようにアルファベットを反転させるだけの、鍵を持たない最古級の暗号",
+    type: "換字式",
+  },
+  {
+    id: "scytale",
+    path: "/scytale",
+    name: "スキュタレー暗号",
+    era: "紀元前5世紀ごろ 古代スパルタ",
+    tagline: "特定の太さの棒に紙を巻きつけて文字を書く、もっとも古い転置式暗号のひとつ",
+    type: "転置式",
+  },
+  {
+    id: "geometric",
+    path: "/geometric",
+    name: "図形転置式暗号",
+    era: "転置式暗号の基本形",
+    tagline: "升目に書き込んだ文字を、列・斜め・渦巻きなど異なるルートで読み出して並べ替える暗号",
+    type: "転置式",
+  },
+  {
+    id: "railfence",
+    path: "/railfence",
+    name: "レールフェンス暗号",
+    era: "古代〜 スキュタレー暗号の系譜",
+    tagline: "文字の並び替え（転置）で読めなくする、線路のようにジグザグに書く暗号",
+    type: "転置式",
+  },
+  {
+    id: "caesar",
+    path: "/caesar",
+    name: "シーザー暗号",
+    era: "紀元前1世紀 古代ローマ",
+    tagline: "アルファベットを一定数だけずらすだけの、暗号史上もっとも有名な暗号",
     type: "換字式",
   },
   {
@@ -33,22 +58,6 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
-    id: "vigenere",
-    path: "/vigenere",
-    name: "ヴィジュネル暗号",
-    era: "16世紀 フランス",
-    tagline: "鍵となる単語で毎回ずらし幅を変える、300年間解読不能と言われた暗号",
-    type: "換字式",
-  },
-  {
-    id: "railfence",
-    path: "/railfence",
-    name: "レールフェンス暗号",
-    era: "古代〜 スキュタレー暗号の系譜",
-    tagline: "文字の並び替え（転置）で読めなくする、線路のようにジグザグに書く暗号",
-    type: "転置式",
-  },
-  {
     id: "uesugi",
     path: "/uesugi",
     name: "上杉暗号",
@@ -57,20 +66,12 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
-    id: "geometric",
-    path: "/geometric",
-    name: "図形転置式暗号",
-    era: "転置式暗号の基本形",
-    tagline: "升目に書き込んだ文字を、列・斜め・渦巻きなど異なるルートで読み出して並べ替える暗号",
-    type: "転置式",
-  },
-  {
-    id: "scytale",
-    path: "/scytale",
-    name: "スキュタレー暗号",
-    era: "紀元前5世紀ごろ 古代スパルタ",
-    tagline: "特定の太さの棒に紙を巻きつけて文字を書く、もっとも古い転置式暗号のひとつ",
-    type: "転置式",
+    id: "vigenere",
+    path: "/vigenere",
+    name: "ヴィジュネル暗号",
+    era: "16世紀 フランス",
+    tagline: "鍵となる単語で毎回ずらし幅を変える、300年間解読不能と言われた暗号",
+    type: "換字式",
   },
   {
     id: "pigpen",

@@ -22,7 +22,9 @@ export default function Home() {
             <h2>{cipher.name}</h2>
             <p className="cipher-era">{cipher.era}</p>
             <p className="cipher-tagline">{cipher.tagline}</p>
-            <span className="cipher-cta">試してみる →</span>
+            <span className="card-chevron" aria-hidden="true">
+              ›
+            </span>
           </Link>
         ))}
       </section>

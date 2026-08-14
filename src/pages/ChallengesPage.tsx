@@ -36,7 +36,9 @@ export default function ChallengesPage() {
             </h2>
             <p className="cipher-era">{challenge.cipherName}</p>
             <p className="cipher-tagline">{challenge.prompt}</p>
-            <span className="cipher-cta">挑戦する →</span>
+            <span className="card-chevron" aria-hidden="true">
+              ›
+            </span>
           </Link>
         ))}
       </div>

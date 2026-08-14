@@ -1,5 +1,5 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
-import { CIPHER_CATALOG } from "../ciphers/catalog";
+import CipherDropdown from "./CipherDropdown";
 
 export default function Layout() {
   return (
@@ -9,15 +9,7 @@ export default function Layout() {
           🔐 古典暗号プレイグラウンド
         </Link>
         <nav className="site-nav">
-          {CIPHER_CATALOG.map((cipher) => (
-            <NavLink
-              key={cipher.id}
-              to={cipher.path}
-              className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
-            >
-              {cipher.name}
-            </NavLink>
-          ))}
+          <CipherDropdown />
           <NavLink to="/challenges" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
             🏆 チャレンジ
           </NavLink>

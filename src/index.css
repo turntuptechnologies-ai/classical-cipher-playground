@@ -14,8 +14,7 @@
   --error-bg: rgba(179, 38, 30, 0.08);
   --shadow: rgba(33, 28, 46, 0.08) 0 10px 24px -8px, rgba(33, 28, 46, 0.05) 0 2px 6px -2px;
 
-  --sans: "Hiragino Sans", "Yu Gothic", system-ui, "Segoe UI", Roboto, sans-serif;
-  --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, "SF Mono", Consolas, monospace;
 
   font: 17px/1.7 var(--sans);
@@ -56,8 +55,8 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: var(--serif);
-  font-weight: 600;
+  font-family: var(--sans);
+  font-weight: 700;
   color: var(--text-h);
 }
 
@@ -115,8 +114,8 @@ button, input {
 }
 
 .site-title {
-  font-family: var(--serif);
-  font-weight: 600;
+  font-family: var(--sans);
+  font-weight: 700;
   font-size: 1.2rem;
   color: var(--text-h);
   text-decoration: none;
@@ -144,7 +143,53 @@ button, input {
 .nav-link.active {
   background: var(--accent-bg);
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.cipher-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-caret {
+  font-size: 0.7em;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  z-index: 20;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.dropdown-item:hover {
+  background: var(--code-bg);
+  color: var(--text-h);
 }
 
 .site-main {
@@ -189,23 +234,26 @@ button, input {
 }
 
 .cipher-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
   padding: 22px;
+  padding-bottom: 30px;
   background: var(--bg-raised);
   border: 1px solid var(--border);
   border-radius: 14px;
   text-decoration: none;
   color: inherit;
   box-shadow: var(--shadow);
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .cipher-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   border-color: var(--accent-border);
+  box-shadow: rgba(33, 28, 46, 0.16) 0 16px 28px -10px, rgba(33, 28, 46, 0.08) 0 4px 8px -2px;
 }
 
 .cipher-card h2 {
@@ -222,6 +270,23 @@ button, input {
 .cipher-tagline {
   font-size: 0.9rem;
   margin-top: 4px;
+}
+
+.card-chevron {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--text);
+  opacity: 0.35;
+  transition: transform 0.15s ease, opacity 0.15s ease, color 0.15s ease;
+}
+
+.cipher-card:hover .card-chevron {
+  color: var(--accent);
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 .cipher-cta {

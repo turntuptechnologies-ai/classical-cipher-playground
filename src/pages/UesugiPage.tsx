@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { uesugiDecode, uesugiEncode, uesugiEncodeTokens } from "../ciphers/uesugi";
 import ModeToggle, { type CipherMode } from "../components/ModeToggle";
 import CopyButton from "../components/CopyButton";
@@ -36,7 +37,7 @@ export default function UesugiPage() {
           「いろは48文字」（いろは47音に「ん」を加えたもの）を7×7の表に並べ、
           文字を<strong>「行の番号」と「列の番号」の組み合わせ</strong>で表す暗号です。
           例えば「て」は5行7列目にあるので「5-7」と表されます。
-          ヨーロッパのポリュビオス暗号（座標式暗号）と同じ考え方を、独自にいろは表で実現したものといえます。
+          ヨーロッパの<Link to="/polybius" className="cipher-link">ポリュビオス暗号</Link>（座標式暗号）と同じ考え方を、独自にいろは表で実現したものといえます。
         </p>
         <p>
           上杉謙信の軍師・宇佐美定行が考案したという説がよく紹介されますが、

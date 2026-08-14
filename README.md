@@ -1,9 +1,12 @@
 # 古典暗号プレイグラウンド (classical-cipher-playground)
 
+[![CI](https://github.com/turntuptechnologies-ai/classical-cipher-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/turntuptechnologies-ai/classical-cipher-playground/actions/workflows/ci.yml)
+[![Deploy to GitHub Pages](https://github.com/turntuptechnologies-ai/classical-cipher-playground/actions/workflows/deploy.yml/badge.svg)](https://github.com/turntuptechnologies-ai/classical-cipher-playground/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://turntuptechnologies-ai.github.io/classical-cipher-playground/)
+
 コンピュータが生まれる前から使われてきた**古典暗号（クラシカル・サイファー）**を、
 実際に文章を暗号化・復号しながら体験できる学習サイトです。
-
-🔗 https://turntuptechnologies-ai.github.io/classical-cipher-playground/
 
 ## 収録している暗号
 

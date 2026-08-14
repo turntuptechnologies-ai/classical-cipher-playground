@@ -73,6 +73,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "転置式",
   },
   {
+    id: "pigpen",
+    path: "/pigpen",
+    name: "ピッグペン暗号",
+    era: "18世紀ごろ（伝）フリーメイソン",
+    tagline: "アルファベットを格子やX字の区画の形という幾何学的な記号に置き換える暗号",
+    type: "換字式",
+  },
+  {
     id: "enigma",
     path: "/enigma",
     name: "エニグマ暗号",

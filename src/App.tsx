@@ -10,6 +10,7 @@ import EnigmaPage from "./pages/EnigmaPage";
 import ScytalePage from "./pages/ScytalePage";
 import GeometricPage from "./pages/GeometricPage";
 import AtbashPage from "./pages/AtbashPage";
+import PigpenPage from "./pages/PigpenPage";
 import ChallengesPage from "./pages/ChallengesPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
 
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/scytale" element={<ScytalePage />} />
           <Route path="/geometric" element={<GeometricPage />} />
           <Route path="/atbash" element={<AtbashPage />} />
+          <Route path="/pigpen" element={<PigpenPage />} />
           <Route path="/challenges" element={<ChallengesPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
         </Route>

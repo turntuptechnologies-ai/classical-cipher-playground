@@ -993,6 +993,72 @@ button, input {
   font-size: 0.9rem;
 }
 
+/* ---- cryptanalysis ---- */
+
+.cryptanalysis-applies-to {
+  font-size: 0.8rem;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.frequency-charts-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.frequency-chart {
+  flex: 1;
+  min-width: 260px;
+}
+
+.frequency-chart-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0 0 10px;
+}
+
+.frequency-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.frequency-row {
+  display: grid;
+  grid-template-columns: 18px 1fr 44px;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+}
+
+.frequency-label {
+  font-family: var(--mono);
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.frequency-bar-track {
+  height: 10px;
+  background: var(--code-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.frequency-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+.frequency-percent {
+  font-family: var(--mono);
+  color: var(--text);
+  text-align: right;
+}
+
 @media (max-width: 640px) {
   .site-header {
     padding: 16px;

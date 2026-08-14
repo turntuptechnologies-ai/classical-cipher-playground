@@ -56,3 +56,7 @@ npm run test     # vitest
 `main` への直接pushは禁止しており、Issue → ブランチ → PR → マージの運用です。
 PRでは `ci`（build + lint + test）のチェックが必須で、マージ後にGitHub Actionsが
 GitHub Pagesへ自動デプロイします。
+
+## License
+
+MIT — see [LICENSE](LICENSE).

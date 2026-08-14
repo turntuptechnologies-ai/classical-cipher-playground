@@ -49,6 +49,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
+    id: "scytale",
+    path: "/scytale",
+    name: "スキュタレー暗号",
+    era: "紀元前5世紀ごろ 古代スパルタ",
+    tagline: "特定の太さの棒に紙を巻きつけて文字を書く、もっとも古い転置式暗号のひとつ",
+    type: "転置式",
+  },
+  {
     id: "enigma",
     path: "/enigma",
     name: "エニグマ暗号",

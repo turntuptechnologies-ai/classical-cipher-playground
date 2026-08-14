@@ -7,6 +7,7 @@ import VigenerePage from "./pages/VigenerePage";
 import RailFencePage from "./pages/RailFencePage";
 import UesugiPage from "./pages/UesugiPage";
 import EnigmaPage from "./pages/EnigmaPage";
+import ScytalePage from "./pages/ScytalePage";
 import ChallengesPage from "./pages/ChallengesPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/railfence" element={<RailFencePage />} />
           <Route path="/uesugi" element={<UesugiPage />} />
           <Route path="/enigma" element={<EnigmaPage />} />
+          <Route path="/scytale" element={<ScytalePage />} />
           <Route path="/challenges" element={<ChallengesPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
         </Route>

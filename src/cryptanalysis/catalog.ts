@@ -44,4 +44,16 @@ export const CRYPTANALYSIS_CATALOG: CryptanalysisMethodInfo[] = [
     tagline: "暗号文中に繰り返し現れる文字列の間隔から、鍵の長さを推測する手法",
     appliesTo: [{ name: "ヴィジュネル暗号", path: "/vigenere" }],
   },
+  {
+    id: "anagram",
+    path: "/cryptanalysis/anagram",
+    name: "アナグラム法",
+    tagline: "文字の並び替えを疑い、読める並びが出るまで列数・並び順を試行錯誤する手法",
+    appliesTo: [
+      { name: "スキュタレー暗号", path: "/scytale" },
+      { name: "レールフェンス暗号", path: "/railfence" },
+      { name: "列転置暗号", path: "/columnar" },
+      { name: "図形転置式暗号", path: "/geometric" },
+    ],
+  },
 ];

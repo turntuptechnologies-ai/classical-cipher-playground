@@ -3,9 +3,11 @@ import { adfgvxDecode } from "../ciphers/adfgvx";
 import { atbashTransform } from "../ciphers/atbash";
 import { caesarDecode } from "../ciphers/caesar";
 import { enigmaProcess, type EnigmaSettings } from "../ciphers/enigma";
+import { columnarDecode } from "../ciphers/columnar";
 import { geometricDecode } from "../ciphers/geometric";
 import { pigpenDecode } from "../ciphers/pigpen";
 import { playfairDecode } from "../ciphers/playfair";
+import { polybiusDecode } from "../ciphers/polybius";
 import { railFenceDecode } from "../ciphers/railfence";
 import { scytaleDecode } from "../ciphers/scytale";
 import { substitutionDecode } from "../ciphers/substitution";
@@ -57,6 +59,16 @@ describe("challenge ciphertexts decode to their stated answer with the hinted pa
   it("pigpen-1 (coordinate notation, no key needed)", () => {
     const c = CHALLENGES.find((x) => x.id === "pigpen-1")!;
     expect(pigpenDecode(c.ciphertext)).toBe(c.answer);
+  });
+
+  it("polybius-1 (key GREECE from the hint)", () => {
+    const c = CHALLENGES.find((x) => x.id === "polybius-1")!;
+    expect(polybiusDecode(c.ciphertext, "GREECE")).toBe(normalizeAnswer(c.answer));
+  });
+
+  it("columnar-1 (key SHIELD from the hint)", () => {
+    const c = CHALLENGES.find((x) => x.id === "columnar-1")!;
+    expect(columnarDecode(c.ciphertext, "SHIELD")).toBe(normalizeAnswer(c.answer));
   });
 
   it("playfair-1 (key SECRET from the hint; decode reconstructs the answer plus a trailing filler X)", () => {

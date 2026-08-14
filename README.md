@@ -1,32 +1,41 @@
-# React + TypeScript + Vite
+# 古典暗号プレイグラウンド (classical-cipher-playground)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+コンピュータが生まれる前から使われてきた**古典暗号（クラシカル・サイファー）**を、
+実際に文章を暗号化・復号しながら体験できる学習サイトです。
 
-Currently, two official plugins are available:
+🔗 https://turntuptechnologies-ai.github.io/classical-cipher-playground/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 収録している暗号
 
-## React Compiler
+| 暗号 | 種類 | 時代 |
+| --- | --- | --- |
+| シーザー暗号 | 換字式 | 紀元前1世紀・古代ローマ |
+| 単一換字式暗号 | 換字式 | 9世紀ごろ・アラビア〜中世ヨーロッパ |
+| ヴィジュネル暗号 | 換字式 | 16世紀・フランス |
+| レールフェンス暗号 | 転置式 | 古代〜（スキュタレー暗号の系譜） |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+各ページで暗号化・復号の両方向を試せるほか、シーザー暗号／単一換字式暗号ではアルファベット対応表、
+ヴィジュネル暗号では文字ごとの変換過程、レールフェンス暗号ではジグザグ図を表示し、
+仕組みが視覚的にわかるようにしています。
 
-## Expanding the Oxlint configuration
+### 今後追加予定
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- 暗号解読チャレンジ（ヒント付きでciphertextを解読する問題）
+- エニグマ暗号
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## 技術スタック
+
+- React + TypeScript + Vite
+- react-router-dom（HashRouter）
+- GitHub Pages（GitHub Actions で自動デプロイ）
+
+## 開発
+
+```bash
+npm install
+npm run dev      # 開発サーバー起動
+npm run build    # 型チェック + 本番ビルド
+npm run lint     # oxlint
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+`main` ブランチへの push で GitHub Actions が自動的にビルドし、GitHub Pages に反映されます。

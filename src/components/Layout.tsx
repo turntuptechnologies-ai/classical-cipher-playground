@@ -10,6 +10,9 @@ export default function Layout() {
         </Link>
         <nav className="site-nav">
           <CipherDropdown />
+          <NavLink to="/cryptanalysis" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+            🔍 解読方法
+          </NavLink>
           <NavLink to="/challenges" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
             🏆 チャレンジ
           </NavLink>

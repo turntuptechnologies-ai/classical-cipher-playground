@@ -15,6 +15,7 @@
   --shadow: rgba(33, 28, 46, 0.08) 0 10px 24px -8px, rgba(33, 28, 46, 0.05) 0 2px 6px -2px;
 
   --sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, "Segoe UI", Roboto, sans-serif;
+  --title-font: "WDXL Lubrifont JP N", var(--sans);
   --mono: ui-monospace, "SF Mono", Consolas, monospace;
 
   font: 17px/1.7 var(--sans);
@@ -114,9 +115,9 @@ button, input {
 }
 
 .site-title {
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-family: var(--title-font);
+  font-weight: 400;
+  font-size: 1.3rem;
   color: var(--text-h);
   text-decoration: none;
 }

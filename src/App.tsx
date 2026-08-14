@@ -22,6 +22,7 @@ import FrequencyAnalysisPage from "./pages/FrequencyAnalysisPage";
 import BruteForcePage from "./pages/BruteForcePage";
 import KasiskiPage from "./pages/KasiskiPage";
 import AnagramPage from "./pages/AnagramPage";
+import KnownPlaintextPage from "./pages/KnownPlaintextPage";
 
 export default function App() {
   return (
@@ -48,6 +49,7 @@ export default function App() {
           <Route path="/cryptanalysis/bruteforce" element={<BruteForcePage />} />
           <Route path="/cryptanalysis/kasiski" element={<KasiskiPage />} />
           <Route path="/cryptanalysis/anagram" element={<AnagramPage />} />
+          <Route path="/cryptanalysis/known-plaintext" element={<KnownPlaintextPage />} />
           <Route path="/challenges" element={<ChallengesPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
         </Route>

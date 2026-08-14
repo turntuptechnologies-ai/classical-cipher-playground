@@ -56,4 +56,16 @@ export const CRYPTANALYSIS_CATALOG: CryptanalysisMethodInfo[] = [
       { name: "図形転置式暗号", path: "/geometric" },
     ],
   },
+  {
+    id: "known-plaintext",
+    path: "/cryptanalysis/known-plaintext",
+    name: "既知平文攻撃",
+    tagline: "平文の一部が分かっている（推測できる）ときに、そこから鍵を逆算する手法",
+    appliesTo: [
+      { name: "ヴィジュネル暗号", path: "/vigenere" },
+      { name: "プレイフェア暗号", path: "/playfair" },
+      { name: "ADFGVX暗号", path: "/adfgvx" },
+      { name: "エニグマ暗号", path: "/enigma" },
+    ],
+  },
 ];

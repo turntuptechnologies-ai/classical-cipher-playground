@@ -37,4 +37,11 @@ export const CRYPTANALYSIS_CATALOG: CryptanalysisMethodInfo[] = [
       { name: "スキュタレー暗号", path: "/scytale" },
     ],
   },
+  {
+    id: "kasiski",
+    path: "/cryptanalysis/kasiski",
+    name: "カシスキー試験",
+    tagline: "暗号文中に繰り返し現れる文字列の間隔から、鍵の長さを推測する手法",
+    appliesTo: [{ name: "ヴィジュネル暗号", path: "/vigenere" }],
+  },
 ];

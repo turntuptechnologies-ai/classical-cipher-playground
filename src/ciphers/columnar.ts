@@ -39,10 +39,10 @@ export function columnarEncode(text: string, keyword: string): string {
   return out;
 }
 
-export function columnarDecode(text: string, keyword: string): string {
-  const cols = keyword.replace(/[^A-Za-z]/g, "").length;
+// 列数と「読み出し順」を直接指定して復号する。キーワードを知らず、列数と並び順の
+// 候補を試行錯誤する解読（アナグラム法）から呼べるように、キーワード解決とは切り離してある。
+export function decodeColumns(text: string, cols: number, order: number[]): string {
   if (cols < 2 || text.length === 0) return text;
-  const order = transpositionOrder(keyword);
   const n = text.length;
   const rows = Math.ceil(n / cols);
 
@@ -69,6 +69,12 @@ export function columnarDecode(text: string, keyword: string): string {
     }
   }
   return out;
+}
+
+export function columnarDecode(text: string, keyword: string): string {
+  const cols = keyword.replace(/[^A-Za-z]/g, "").length;
+  if (cols < 2 || text.length === 0) return text;
+  return decodeColumns(text, cols, transpositionOrder(keyword));
 }
 
 export function columnarGrid(text: string, keyword: string): (string | null)[][] {

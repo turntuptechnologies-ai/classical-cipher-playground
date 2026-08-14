@@ -1059,6 +1059,38 @@ button, input {
   text-align: right;
 }
 
+.bruteforce-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.bruteforce-table th,
+.bruteforce-table td {
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  text-align: left;
+}
+
+.bruteforce-table thead th {
+  color: var(--text-h);
+  background: var(--code-bg);
+}
+
+.bruteforce-table th[scope="row"] {
+  width: 64px;
+  text-align: right;
+  color: var(--text-h);
+  background: var(--code-bg);
+  font-weight: 600;
+}
+
+.bruteforce-result {
+  word-break: break-word;
+  color: var(--text-h);
+}
+
 @media (max-width: 640px) {
   .site-header {
     padding: 16px;

@@ -19,6 +19,7 @@ import ChallengesPage from "./pages/ChallengesPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
 import CryptanalysisPage from "./pages/CryptanalysisPage";
 import FrequencyAnalysisPage from "./pages/FrequencyAnalysisPage";
+import BruteForcePage from "./pages/BruteForcePage";
 
 export default function App() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
           <Route path="/columnar" element={<ColumnarPage />} />
           <Route path="/cryptanalysis" element={<CryptanalysisPage />} />
           <Route path="/cryptanalysis/frequency" element={<FrequencyAnalysisPage />} />
+          <Route path="/cryptanalysis/bruteforce" element={<BruteForcePage />} />
           <Route path="/challenges" element={<ChallengesPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
         </Route>

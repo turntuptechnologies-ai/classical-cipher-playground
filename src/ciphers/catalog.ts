@@ -90,6 +90,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
+    id: "adfgvx",
+    path: "/adfgvx",
+    name: "ADFGVX暗号",
+    era: "1918年 第一次世界大戦・ドイツ",
+    tagline: "座標変換と鍵付き列転置を組み合わせた2段階暗号。当時「解読不能」と評された",
+    type: "転置式",
+  },
+  {
     id: "enigma",
     path: "/enigma",
     name: "エニグマ暗号",

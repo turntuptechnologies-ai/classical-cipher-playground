@@ -40,7 +40,8 @@ export default function AdfgvxPage() {
           当時「解読不能」と評された2段階の暗号です。まず26文字と数字0〜9の36種類を
           6×6の<Link to="/polybius" className="cipher-link">ポリュビオス</Link>方陣に並べ、各文字を <code>A D F G V X</code> の2文字の座標に変換します
           （この6文字は、モールス信号で送ったときに聞き間違えにくいという理由で選ばれました）。
-          次に、その結果を<strong>別の鍵（転置鍵）で列の順番を並べ替える列転置</strong>にかけます。
+          次に、その結果を<strong>別の鍵（転置鍵）で列の順番を並べ替える</strong>
+          <Link to="/columnar" className="cipher-link">列転置暗号</Link>にかけます。
           上杉暗号のような座標変換と、図形転置式暗号のような並べ替えを組み合わせた、いわば合わせ技です。
         </p>
         <p className="note-text">

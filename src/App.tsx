@@ -14,6 +14,7 @@ import PigpenPage from "./pages/PigpenPage";
 import PlayfairPage from "./pages/PlayfairPage";
 import AdfgvxPage from "./pages/AdfgvxPage";
 import PolybiusPage from "./pages/PolybiusPage";
+import ColumnarPage from "./pages/ColumnarPage";
 import ChallengesPage from "./pages/ChallengesPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
 
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/playfair" element={<PlayfairPage />} />
           <Route path="/adfgvx" element={<AdfgvxPage />} />
           <Route path="/polybius" element={<PolybiusPage />} />
+          <Route path="/columnar" element={<ColumnarPage />} />
           <Route path="/challenges" element={<ChallengesPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
         </Route>

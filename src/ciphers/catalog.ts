@@ -48,4 +48,12 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     tagline: "いろは48文字を7×7の表に並べ、行と列の番号の組で文字を表す日本の陣中暗号",
     type: "換字式",
   },
+  {
+    id: "enigma",
+    path: "/enigma",
+    name: "エニグマ暗号",
+    era: "1920年代〜第二次世界大戦・ドイツ",
+    tagline: "回転するローターで1文字ごとに換字表を切り替える機械式暗号。連合国が解読に成功したことで有名",
+    type: "換字式",
+  },
 ];

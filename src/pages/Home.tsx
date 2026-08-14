@@ -31,7 +31,6 @@ export default function Home() {
         <h2>今後追加予定</h2>
         <ul>
           <li>暗号解読チャレンジ（ヒント付きでciphertextを解読する問題）</li>
-          <li>エニグマ暗号（第二次世界大戦で使われた機械式暗号）</li>
         </ul>
       </section>
     </div>

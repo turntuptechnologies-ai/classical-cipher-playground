@@ -34,8 +34,8 @@ export default function Home() {
           <h2>ひととおり試したら、解読チャレンジに挑戦してみましょう</h2>
           <p>学んだ暗号を使って、実際に暗号文を解読するミニパズルです。ヒントは段階的に開示されます。</p>
         </div>
-        <Link to="/challenges" className="cipher-cta">
-          チャレンジ一覧へ →
+        <Link to="/challenges" className="button-link">
+          チャレンジ一覧へ
         </Link>
       </section>
     </div>

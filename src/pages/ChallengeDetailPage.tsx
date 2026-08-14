@@ -32,7 +32,7 @@ export default function ChallengeDetailPage() {
   return (
     <article className="cipher-page">
       <p className="breadcrumb">
-        <Link to="/challenges">← チャレンジ一覧</Link>
+        <Link to="/challenges">チャレンジ一覧</Link>
       </p>
 
       <header className="cipher-page-header">
@@ -41,7 +41,7 @@ export default function ChallengeDetailPage() {
           <span className={`type-badge difficulty-${challenge.difficulty}`}>
             {DIFFICULTY_LABEL[challenge.difficulty]}
           </span>
-          <Link to={challenge.cipherPath} className="cipher-link"> {challenge.cipherName}のページを開く →</Link>
+          <Link to={challenge.cipherPath} className="cipher-link"> {challenge.cipherName}のページを開く</Link>
         </p>
       </header>
 
@@ -106,8 +106,8 @@ export default function ChallengeDetailPage() {
 
         {feedback === "correct" && next && (
           <p>
-            <Link to={`/challenges/${next.id}`} className="cipher-cta">
-              次のチャレンジへ（{next.title}） →
+            <Link to={`/challenges/${next.id}`} className="button-link">
+              次のチャレンジへ（{next.title}）
             </Link>
           </p>
         )}

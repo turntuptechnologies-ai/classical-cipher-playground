@@ -963,6 +963,36 @@ button, input {
   color: var(--text);
 }
 
+.playfair-grid-wrap {
+  overflow-x: auto;
+}
+
+.playfair-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: max-content;
+}
+
+.playfair-grid-row {
+  display: flex;
+  gap: 4px;
+}
+
+.playfair-cell {
+  font-family: var(--mono);
+  font-weight: 700;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-bg);
+  color: var(--text-h);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 640px) {
   .site-header {
     padding: 16px;

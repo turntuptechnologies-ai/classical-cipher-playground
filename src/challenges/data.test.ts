@@ -1,7 +1,11 @@
 import { describe, expect, it } from "vitest";
+import { atbashTransform } from "../ciphers/atbash";
 import { caesarDecode } from "../ciphers/caesar";
 import { enigmaProcess, type EnigmaSettings } from "../ciphers/enigma";
+import { geometricDecode } from "../ciphers/geometric";
+import { pigpenDecode } from "../ciphers/pigpen";
 import { railFenceDecode } from "../ciphers/railfence";
+import { scytaleDecode } from "../ciphers/scytale";
 import { substitutionDecode } from "../ciphers/substitution";
 import { uesugiDecode } from "../ciphers/uesugi";
 import { vigenereDecode } from "../ciphers/vigenere";
@@ -31,6 +35,26 @@ describe("challenge ciphertexts decode to their stated answer with the hinted pa
   it("vigenere-1 (key GOLD from the hint)", () => {
     const c = CHALLENGES.find((x) => x.id === "vigenere-1")!;
     expect(vigenereDecode(c.ciphertext, "GOLD")).toBe(c.answer);
+  });
+
+  it("atbash-1 (no key needed, self-reciprocal)", () => {
+    const c = CHALLENGES.find((x) => x.id === "atbash-1")!;
+    expect(atbashTransform(c.ciphertext)).toBe(c.answer);
+  });
+
+  it("scytale-1 (4 faces, matches the hint)", () => {
+    const c = CHALLENGES.find((x) => x.id === "scytale-1")!;
+    expect(scytaleDecode(c.ciphertext, 4)).toBe(c.answer);
+  });
+
+  it("geometric-1 (4 rows, spiral route, matches the hint)", () => {
+    const c = CHALLENGES.find((x) => x.id === "geometric-1")!;
+    expect(geometricDecode(c.ciphertext, 4, "spiral")).toBe(c.answer);
+  });
+
+  it("pigpen-1 (coordinate notation, no key needed)", () => {
+    const c = CHALLENGES.find((x) => x.id === "pigpen-1")!;
+    expect(pigpenDecode(c.ciphertext)).toBe(c.answer);
   });
 
   it("enigma-1 (settings from the hint)", () => {

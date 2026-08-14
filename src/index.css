@@ -650,6 +650,88 @@ button, input {
   font-weight: 700;
 }
 
+.enigma-config {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--code-bg);
+  border-radius: 12px;
+}
+
+.enigma-rotor-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.enigma-rotor-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 120px;
+}
+
+.enigma-slot-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.enigma-rotor-col select {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--text-h);
+}
+
+.enigma-letter-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text);
+}
+
+.enigma-letter-field input {
+  width: 32px;
+  padding: 4px 0;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--text-h);
+}
+
+.enigma-window-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.enigma-window {
+  display: flex;
+  gap: 6px;
+}
+
+.enigma-window-cell {
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  width: 40px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
 @media (max-width: 640px) {
   .site-header {
     padding: 16px;

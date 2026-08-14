@@ -27,7 +27,9 @@ export default function RailFencePage() {
     <article className="cipher-page">
       <header className="cipher-page-header">
         <h1>レールフェンス暗号</h1>
-        <p className="cipher-page-era">スキュタレー暗号にはじまる「転置式」の系譜</p>
+        <p className="cipher-page-era">
+          <Link to="/scytale" className="cipher-link">スキュタレー暗号</Link>にはじまる「転置式」の系譜
+        </p>
       </header>
 
       <section className="explanation">

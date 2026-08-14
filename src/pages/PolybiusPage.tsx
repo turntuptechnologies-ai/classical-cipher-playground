@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { buildPolybiusSquare, polybiusDecode, polybiusEncode } from "../ciphers/polybius";
 import ModeToggle, { type CipherMode } from "../components/ModeToggle";
 import CopyButton from "../components/CopyButton";
@@ -36,7 +37,8 @@ export default function PolybiusPage() {
           鍵を使わずアルファベット順のまま表を使えば、この松明通信のように誰でも読み書きできる
           「公開された符号」になります。一方、キーワードで表の並びを混ぜれば、鍵を知らない人には
           読めない立派な暗号になります。この座標変換という発想は、日本の
-          <strong>上杉暗号</strong>や第一次世界大戦の<strong>ADFGVX暗号</strong>にも受け継がれています。
+          <Link to="/uesugi" className="cipher-link">上杉暗号</Link>
+          や第一次世界大戦の<Link to="/adfgvx" className="cipher-link">ADFGVX暗号</Link>にも受け継がれています。
         </p>
       </section>
 

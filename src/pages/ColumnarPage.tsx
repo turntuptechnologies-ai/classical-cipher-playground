@@ -43,7 +43,8 @@ export default function ColumnarPage() {
           暗号文になります。
         </p>
         <p>
-          レールフェンス暗号やスキュタレー暗号よりも並べ方のパターンが格段に多く
+          <Link to="/railfence" className="cipher-link">レールフェンス暗号</Link>や
+          <Link to="/scytale" className="cipher-link">スキュタレー暗号</Link>よりも並べ方のパターンが格段に多く
           （キーワードの長さの階乗ぶんの並べ方があります）、単純な総当たりが難しくなります。
           第一次世界大戦の<Link to="/adfgvx" className="cipher-link">ADFGVX暗号</Link>
           は、この列転置暗号を第2段階として使っています。

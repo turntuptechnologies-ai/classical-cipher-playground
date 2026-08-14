@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ALPHABET,
   randomKey,
@@ -32,7 +33,7 @@ export default function SubstitutionPage() {
 
       <section className="explanation">
         <p>
-          シーザー暗号は「決まった数だけずらす」という規則がありましたが、
+          <Link to="/caesar" className="cipher-link">シーザー暗号</Link>は「決まった数だけずらす」という規則がありましたが、
           単一換字式暗号はもっと自由に、<strong>アルファベット26文字をバラバラに並べ替えた表</strong>{" "}
           を使って一文字ずつ置き換えます。組み合わせは 26! （約4×10²⁶通り）あり、総当たりでは事実上解読不可能です。
         </p>

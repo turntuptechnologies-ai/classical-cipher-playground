@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
+import { adfgvxDecode } from "../ciphers/adfgvx";
 import { atbashTransform } from "../ciphers/atbash";
 import { caesarDecode } from "../ciphers/caesar";
 import { enigmaProcess, type EnigmaSettings } from "../ciphers/enigma";
 import { geometricDecode } from "../ciphers/geometric";
 import { pigpenDecode } from "../ciphers/pigpen";
+import { playfairDecode } from "../ciphers/playfair";
 import { railFenceDecode } from "../ciphers/railfence";
 import { scytaleDecode } from "../ciphers/scytale";
 import { substitutionDecode } from "../ciphers/substitution";
@@ -55,6 +57,18 @@ describe("challenge ciphertexts decode to their stated answer with the hinted pa
   it("pigpen-1 (coordinate notation, no key needed)", () => {
     const c = CHALLENGES.find((x) => x.id === "pigpen-1")!;
     expect(pigpenDecode(c.ciphertext)).toBe(c.answer);
+  });
+
+  it("playfair-1 (key SECRET from the hint; decode reconstructs the answer plus a trailing filler X)", () => {
+    const c = CHALLENGES.find((x) => x.id === "playfair-1")!;
+    // Playfair pads an odd-length message with a trailing filler, so the raw decode
+    // output is the normalized answer with an extra "X" appended.
+    expect(playfairDecode(c.ciphertext, "SECRET")).toBe(`${normalizeAnswer(c.answer)}X`);
+  });
+
+  it("adfgvx-1 (both keys from the hint)", () => {
+    const c = CHALLENGES.find((x) => x.id === "adfgvx-1")!;
+    expect(adfgvxDecode(c.ciphertext, "OFFENSIVE", "PARIS")).toBe(normalizeAnswer(c.answer));
   });
 
   it("enigma-1 (settings from the hint)", () => {

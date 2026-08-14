@@ -884,6 +884,84 @@ button, input {
   color: var(--accent);
 }
 
+.pigpen-symbol {
+  color: var(--text-h);
+}
+
+.pigpen-symbol-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 16px;
+  background: var(--code-bg);
+  border-radius: 12px;
+}
+
+.pigpen-literal {
+  font-family: var(--mono);
+  color: var(--text);
+  padding: 0 2px;
+}
+
+.pigpen-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pigpen-chart-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pigpen-chart-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pigpen-chart-label {
+  font-size: 0.78rem;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.pigpen-grid-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.pigpen-grid-chart-row {
+  display: flex;
+  gap: 4px;
+}
+
+.pigpen-x-chart {
+  display: flex;
+  gap: 4px;
+  padding: 10px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.pigpen-chart-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
 @media (max-width: 640px) {
   .site-header {
     padding: 16px;

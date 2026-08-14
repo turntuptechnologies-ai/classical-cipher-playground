@@ -6,7 +6,7 @@ export default function Layout() {
     <div className="app-shell">
       <header className="site-header">
         <Link to="/" className="site-title">
-          🔐 古典暗号プレイグラウンド
+          古典暗号プレイグラウンド
         </Link>
         <nav className="site-nav">
           <CipherDropdown />

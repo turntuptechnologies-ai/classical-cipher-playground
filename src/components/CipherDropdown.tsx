@@ -42,7 +42,7 @@ export default function CipherDropdown() {
         aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}
       >
-        暗号 <span className="dropdown-caret">{open ? "▴" : "▾"}</span>
+        🔑 暗号 <span className="dropdown-caret">{open ? "▴" : "▾"}</span>
       </button>
       {open && (
         <div className="dropdown-menu" role="menu">

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   DEFAULT_SETTINGS,
   ROTOR_IDS,
@@ -86,6 +87,8 @@ export default function EnigmaPage() {
           鍵の組み合わせは天文学的な数になり、ドイツ軍は解読不可能と信じていました。
           しかし、ポーランドの暗号局とイギリス・ブレッチリー・パークのアラン・チューリングらの解読チームが
           弱点を突いて解読に成功し、第二次世界大戦の行方に大きな影響を与えたことで知られています。
+          天気予報の決まり文句のような、推測できる平文（クリブ）を手がかりにする
+          <Link to="/cryptanalysis/known-plaintext" className="cipher-link">既知平文攻撃</Link>が解読の突破口になりました。
         </p>
         <p className="note-text">
           ※ このページはドイツ陸軍・空軍で使われた3ローター式（Enigma I）を再現しています。

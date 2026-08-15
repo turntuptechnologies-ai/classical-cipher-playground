@@ -44,6 +44,8 @@ export default function VigenerePage() {
         <p>
           1文字ごとにずらし数が変わるため、<Link to="/substitution" className="cipher-link">単一換字式暗号</Link>を破った頻度分析が効きにくくなります。
           19世紀半ばまで解読法が見つからず、「解読不能な暗号（le chiffre indéchiffrable）」と呼ばれていました。
+          実際に破るには、<Link to="/cryptanalysis/kasiski" className="cipher-link">カシスキー試験</Link>で鍵の長さを、
+          <Link to="/cryptanalysis/known-plaintext" className="cipher-link">既知平文攻撃</Link>で鍵そのものを推測する方法が知られています。
         </p>
       </section>
 

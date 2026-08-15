@@ -57,6 +57,8 @@ export default function GeometricPage() {
           「列読み（縦方向にそのまま読む）」は<Link to="/scytale" className="cipher-link">スキュタレー暗号</Link>とまったく同じ仕組みです。
           このページでは、それに加えて「斜め読み」「渦巻き読み」というルートも試せます。
           升目の作り方や読み方を変えるだけで、同じ平文からまったく違う暗号文が作れることを体感してみましょう。
+          文字を置き換えないため頻度分析は効きませんが、行数やルートを変えながら読める並びを探す
+          <Link to="/cryptanalysis/anagram" className="cipher-link">アナグラム法</Link>で崩せます。
         </p>
       </section>
 

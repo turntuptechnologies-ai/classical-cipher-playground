@@ -41,6 +41,8 @@ export default function RailFencePage() {
         <p>
           仕組みは単純ですが、置き換え表を持たない転置式暗号の代表例として、
           後のより複雑な暗号（<Link to="/columnar" className="cipher-link">列転置暗号</Link>など）の基礎になりました。鍵は「レールの本数」だけです。
+          文字を置き換えないため頻度分析は効きませんが、レール数を変えながら読める並びを探す
+          <Link to="/cryptanalysis/anagram" className="cipher-link">アナグラム法</Link>で崩せます。
         </p>
       </section>
 

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { PIGPEN_TABLE, pigpenDecode, pigpenDecodeTokens, pigpenEncode, pigpenEncodeTokens } from "../ciphers/pigpen";
 import ModeToggle, { type CipherMode } from "../components/ModeToggle";
 import CopyButton from "../components/CopyButton";
@@ -42,7 +43,8 @@ export default function PigpenPage() {
         <p>
           フリーメイソンが使ったという逸話でよく知られていますが、実際には配置の異なる亜種が複数存在し、
           「これが唯一正しい配置」というものはありません。このページでは「格子・格子・X・X」という
-          もっとも広く紹介される構成を採用しています。
+          もっとも広く紹介される構成を採用しています。記号は見た目こそ違いますが1文字1記号の単純な置き換えなので、
+          <Link to="/cryptanalysis/frequency" className="cipher-link">頻度分析</Link>で解読できます。
         </p>
         <p className="note-text">
           ※ 記号はテキストで直接入力できないため、下の対応表にある座標表記

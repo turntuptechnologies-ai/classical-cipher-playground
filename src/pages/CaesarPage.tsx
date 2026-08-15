@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { caesarDecode, caesarEncode } from "../ciphers/caesar";
 import ModeToggle, { type CipherMode } from "../components/ModeToggle";
 import CopyButton from "../components/CopyButton";
@@ -33,7 +34,9 @@ export default function CaesarPage() {
         </p>
         <p>
           仕組みが単純なぶん、ずらし数はたった26通りしかありません。
-          総当たり（ブルートフォース）ですぐに解読できてしまう、暗号としては最も弱い部類に入ります。
+          <Link to="/cryptanalysis/bruteforce" className="cipher-link">総当たり（ブルートフォース）</Link>
+          ですぐに解読できてしまう、暗号としては最も弱い部類に入ります。文章が長ければ
+          <Link to="/cryptanalysis/frequency" className="cipher-link">頻度分析</Link>でも同じように解読できます。
         </p>
       </section>
 

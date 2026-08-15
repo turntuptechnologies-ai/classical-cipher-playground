@@ -47,7 +47,9 @@ export default function ColumnarPage() {
           <Link to="/scytale" className="cipher-link">スキュタレー暗号</Link>よりも並べ方のパターンが格段に多く
           （キーワードの長さの階乗ぶんの並べ方があります）、単純な総当たりが難しくなります。
           第一次世界大戦の<Link to="/adfgvx" className="cipher-link">ADFGVX暗号</Link>
-          は、この列転置暗号を第2段階として使っています。
+          は、この列転置暗号を第2段階として使っています。キーワードを総当たりする代わりに、
+          列数と読み出し順そのものを直接試す<Link to="/cryptanalysis/anagram" className="cipher-link">アナグラム法</Link>
+          が有効です。
         </p>
       </section>
 

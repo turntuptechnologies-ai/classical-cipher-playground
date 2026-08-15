@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { buildPlayfairGrid, playfairDecode, playfairEncode } from "../ciphers/playfair";
 import ModeToggle, { type CipherMode } from "../components/ModeToggle";
 import CopyButton from "../components/CopyButton";
@@ -36,6 +37,8 @@ export default function PlayfairPage() {
           考案者の名を冠していますが実際に考案したのはチャールズ・ホイートストンで、外交官の
           ライオネル・プレイフェアが普及に努めたためこの名で呼ばれています。手作業で運用できる割に
           単純な頻度分析が効きにくく、ボア戦争・第一次世界大戦・第二次世界大戦でも実際に使われました。
+          実際の解読では、平文の一部を推測する
+          <Link to="/cryptanalysis/known-plaintext" className="cipher-link">既知平文攻撃</Link>が手がかりになります。
         </p>
         <p className="note-text">
           ※ 同じ文字が連続するペアには埋め文字（X、Xが使われている場合はQ）を挿入し、

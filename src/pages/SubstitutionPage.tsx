@@ -39,7 +39,8 @@ export default function SubstitutionPage() {
         </p>
         <p>
           ところが実際には、9世紀のアラビアの学者アル・キンディーが発見した
-          <strong>頻度分析</strong>（言語ごとに文字の出現頻度に偏りがあることを利用する手法）によって、
+          <Link to="/cryptanalysis/frequency" className="cipher-link">頻度分析</Link>
+          （言語ごとに文字の出現頻度に偏りがあることを利用する手法）によって、
           文章がある程度長ければ簡単に解読できてしまいます。「組み合わせの多さ」だけでは安全にならない、という好例です。
         </p>
       </section>

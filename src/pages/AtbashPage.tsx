@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { ALPHABET, atbashTransform, REVERSED_ALPHABET } from "../ciphers/atbash";
 import CopyButton from "../components/CopyButton";
 
@@ -29,6 +30,8 @@ export default function AtbashPage() {
           そのため<strong>暗号化と復号がまったく同じ操作</strong>になります
           （もう一度アトバシュ変換をかければ元に戻ります）。鍵がない分、
           仕組みさえ知られてしまえば誰でも即座に解読できてしまう、もっとも弱い暗号のひとつでもあります。
+          仕組みを知らなくても、1文字ずつの置き換えである以上
+          <Link to="/cryptanalysis/frequency" className="cipher-link">頻度分析</Link>で裏付けが取れます。
         </p>
       </section>
 

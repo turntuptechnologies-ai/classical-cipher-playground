@@ -47,7 +47,9 @@ export default function AdfgvxPage() {
         </p>
         <p className="note-text">
           ※ フランスの暗号解読者ジョルジュ・パンヴァンがこの暗号を解読したことは、
-          第一次世界大戦の帰趨に影響を与えたとされています。
+          第一次世界大戦の帰趨に影響を与えたとされています。攻撃してくる部隊や時刻など、
+          平文の一部を推測する<Link to="/cryptanalysis/known-plaintext" className="cipher-link">既知平文攻撃</Link>
+          が手がかりになりました。
         </p>
       </section>
 

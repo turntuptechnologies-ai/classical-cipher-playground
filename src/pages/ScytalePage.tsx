@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { scytaleDecode, scytaleEncode, scytaleGrid } from "../ciphers/scytale";
 import ModeToggle, { type CipherMode } from "../components/ModeToggle";
 import CopyButton from "../components/CopyButton";
@@ -38,7 +39,10 @@ export default function ScytalePage() {
         <p>
           仕組みを表にすると、平文を「棒に1周で書き込める文字数（面数）」を行数として升目に横方向で書き込み、
           縦方向に読み出したものが暗号文になります。鍵は事実上「棒の太さ」だけなので、
-          太さの候補を総当たりされると比較的簡単に解読されてしまいます。
+          太さの候補を<Link to="/cryptanalysis/bruteforce" className="cipher-link">総当たり</Link>
+          されると比較的簡単に解読されてしまいます。仕組みを知らなくても、
+          面数の候補を変えながら読める並びを探す<Link to="/cryptanalysis/anagram" className="cipher-link">アナグラム法</Link>
+          で崩すこともできます。
         </p>
       </section>
 

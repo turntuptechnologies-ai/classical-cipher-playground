@@ -40,6 +40,10 @@ export default function PolybiusPage() {
           <Link to="/uesugi" className="cipher-link">上杉暗号</Link>
           や第一次世界大戦の<Link to="/adfgvx" className="cipher-link">ADFGVX暗号</Link>にも受け継がれています。
         </p>
+        <p className="note-text">
+          鍵ありでも1文字ずつの置き換えである点は変わらないため、
+          <Link to="/cryptanalysis/frequency" className="cipher-link">頻度分析</Link>で解読の糸口が見つかります。
+        </p>
       </section>
 
       <section className="playground">

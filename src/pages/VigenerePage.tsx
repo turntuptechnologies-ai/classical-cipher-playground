@@ -47,6 +47,12 @@ export default function VigenerePage() {
           実際に破るには、<Link to="/cryptanalysis/kasiski" className="cipher-link">カシスキー試験</Link>で鍵の長さを、
           <Link to="/cryptanalysis/known-plaintext" className="cipher-link">既知平文攻撃</Link>で鍵そのものを推測する方法が知られています。
         </p>
+        <p className="note-text">
+          ※ この「鍵を繰り返す」方式は実は1553年にジョヴァン・バッティスタ・ベラーゾが考案したもので、
+          19世紀に誤ってヴィジュネルの名で呼ばれるようになりました。ヴィジュネル自身が1586年に発表したのは、
+          鍵が尽きたあと平文自身を鍵として使い続ける、より強力な
+          <Link to="/autokey" className="cipher-link">オートキー暗号</Link>でした。
+        </p>
       </section>
 
       <section className="explanation">

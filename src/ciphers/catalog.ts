@@ -98,6 +98,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
+    id: "autokey",
+    path: "/autokey",
+    name: "オートキー暗号",
+    era: "1586年 フランス（ブレーズ・ド・ヴィジュネル）",
+    tagline: "初期鍵を使い切ったあとは平文自身を鍵にする、ヴィジュネル本人が発表した本来の設計",
+    type: "換字式",
+  },
+  {
     id: "pigpen",
     path: "/pigpen",
     name: "ピッグペン暗号",

@@ -17,6 +17,7 @@ import PolybiusPage from "./pages/PolybiusPage";
 import ColumnarPage from "./pages/ColumnarPage";
 import HomophonicPage from "./pages/HomophonicPage";
 import PortaPage from "./pages/PortaPage";
+import AutokeyPage from "./pages/AutokeyPage";
 import ChallengesPage from "./pages/ChallengesPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
 import CryptanalysisPage from "./pages/CryptanalysisPage";
@@ -48,6 +49,7 @@ export default function App() {
           <Route path="/columnar" element={<ColumnarPage />} />
           <Route path="/homophonic" element={<HomophonicPage />} />
           <Route path="/porta" element={<PortaPage />} />
+          <Route path="/autokey" element={<AutokeyPage />} />
           <Route path="/cryptanalysis" element={<CryptanalysisPage />} />
           <Route path="/cryptanalysis/frequency" element={<FrequencyAnalysisPage />} />
           <Route path="/cryptanalysis/bruteforce" element={<BruteForcePage />} />

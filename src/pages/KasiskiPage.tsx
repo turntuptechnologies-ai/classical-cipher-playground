@@ -54,7 +54,7 @@ export default function KasiskiPage() {
             繰り返し現れる3文字の並び{repeats.length > MAX_ROWS && `（上位${MAX_ROWS}件を表示、全${repeats.length}件）`}
           </p>
           <div className="steps-table-wrap">
-            <table className="steps-table bruteforce-table">
+            <table className="steps-table data-table">
               <thead>
                 <tr>
                   <th scope="col">文字列</th>
@@ -66,8 +66,8 @@ export default function KasiskiPage() {
                 {repeats.slice(0, MAX_ROWS).map((r) => (
                   <tr key={r.sequence}>
                     <th scope="row">{r.sequence}</th>
-                    <td className="bruteforce-result">{r.positions.join(", ")}</td>
-                    <td className="bruteforce-result">{r.distances.join(", ")}</td>
+                    <td className="data-table-result">{r.positions.join(", ")}</td>
+                    <td className="data-table-result">{r.distances.join(", ")}</td>
                   </tr>
                 ))}
                 {repeats.length === 0 && (
@@ -83,7 +83,7 @@ export default function KasiskiPage() {
         <div>
           <p className="steps-caption">鍵の長さの候補（間隔の約数として一致した回数が多い順）</p>
           <div className="steps-table-wrap">
-            <table className="steps-table bruteforce-table">
+            <table className="steps-table data-table">
               <thead>
                 <tr>
                   <th scope="col">鍵の長さ</th>
@@ -94,7 +94,7 @@ export default function KasiskiPage() {
                 {candidates.slice(0, 8).map((c) => (
                   <tr key={c.length}>
                     <th scope="row">{c.length}</th>
-                    <td className="bruteforce-result">{c.votes}</td>
+                    <td className="data-table-result">{c.votes}</td>
                   </tr>
                 ))}
                 {candidates.length === 0 && (

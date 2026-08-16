@@ -55,7 +55,7 @@ export default function BruteForcePage() {
           <textarea value={caesarInput} onChange={(e) => setCaesarInput(e.target.value)} rows={2} />
         </label>
         <div className="steps-table-wrap">
-          <table className="steps-table bruteforce-table">
+          <table className="steps-table data-table">
             <thead>
               <tr>
                 <th scope="col">ずらし数</th>
@@ -66,7 +66,7 @@ export default function BruteForcePage() {
               {caesarCandidates.map(({ shift, text }) => (
                 <tr key={shift}>
                   <th scope="row">{shift}</th>
-                  <td className="bruteforce-result">{text}</td>
+                  <td className="data-table-result">{text}</td>
                 </tr>
               ))}
             </tbody>
@@ -81,7 +81,7 @@ export default function BruteForcePage() {
           <textarea value={scytaleInput} onChange={(e) => setScytaleInput(e.target.value)} rows={2} />
         </label>
         <div className="steps-table-wrap">
-          <table className="steps-table bruteforce-table">
+          <table className="steps-table data-table">
             <thead>
               <tr>
                 <th scope="col">面数</th>
@@ -92,7 +92,7 @@ export default function BruteForcePage() {
               {scytaleCandidates.map(({ faces, text }) => (
                 <tr key={faces}>
                   <th scope="row">{faces}</th>
-                  <td className="bruteforce-result">{text}</td>
+                  <td className="data-table-result">{text}</td>
                 </tr>
               ))}
             </tbody>

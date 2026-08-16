@@ -3,25 +3,9 @@
 // 例えば鍵がAでもBでも同じ表になる。各表は「2回かければ元に戻る」自己逆変換になっており、
 // 暗号化と復号がまったく同じ操作という珍しい性質を持つ。
 
-const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const CODE_A_UPPER = "A".charCodeAt(0);
-const CODE_A_LOWER = "a".charCodeAt(0);
+import { ALPHABET, indexToLetter, letterToIndex, normalizeKey } from "./alphabet";
 
-export function normalizeKey(key: string): string {
-  return key.replace(/[^a-zA-Z]/g, "").toUpperCase();
-}
-
-function letterToIndex(char: string): number | null {
-  const code = char.charCodeAt(0);
-  if (code >= CODE_A_UPPER && code <= CODE_A_UPPER + 25) return code - CODE_A_UPPER;
-  if (code >= CODE_A_LOWER && code <= CODE_A_LOWER + 25) return code - CODE_A_LOWER;
-  return null;
-}
-
-function indexToLetter(index: number, isUpperCase: boolean): string {
-  const normalized = ((index % 26) + 26) % 26;
-  return String.fromCharCode((isUpperCase ? CODE_A_UPPER : CODE_A_LOWER) + normalized);
-}
+export { normalizeKey };
 
 // 鍵文字1つから、どの表(0〜12)を使うかを求める。AB→0, CD→1, ..., YZ→12。
 export function rowForKeyChar(keyChar: string): number {

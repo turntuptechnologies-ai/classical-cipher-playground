@@ -227,6 +227,21 @@ export const CHALLENGES: Challenge[] = [
     ],
     answer: "MEET AT THE HARBOR",
   },
+  {
+    id: "autokey-1",
+    cipherId: "autokey",
+    cipherName: "オートキー暗号",
+    cipherPath: "/autokey",
+    difficulty: "hard",
+    title: "古い風車小屋",
+    prompt: "初期鍵はたった1文字。それを使い切ったあとは、平文自身が鍵の続きになる。",
+    ciphertext: "EYRF EX MHX HSH ATOX",
+    hints: [
+      "初期鍵は3文字の英単語です。",
+      "初期鍵は SUN です（オートキー暗号のページの復号モードに、暗号文と初期鍵をそのまま入れてみましょう）。",
+    ],
+    answer: "MEET AT THE OLD MILL",
+  },
 ];
 
 export function normalizeAnswer(value: string): string {

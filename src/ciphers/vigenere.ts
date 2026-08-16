@@ -1,23 +1,6 @@
-const CODE_A_UPPER = "A".charCodeAt(0);
-const CODE_A_LOWER = "a".charCodeAt(0);
+import { ALPHABET, indexToLetter, letterToIndex, normalizeKey } from "./alphabet";
 
-function letterToIndex(char: string): number | null {
-  const code = char.charCodeAt(0);
-  if (code >= CODE_A_UPPER && code <= CODE_A_UPPER + 25) return code - CODE_A_UPPER;
-  if (code >= CODE_A_LOWER && code <= CODE_A_LOWER + 25) return code - CODE_A_LOWER;
-  return null;
-}
-
-function indexToLetter(index: number, isUpperCase: boolean): string {
-  const normalized = ((index % 26) + 26) % 26;
-  return String.fromCharCode((isUpperCase ? CODE_A_UPPER : CODE_A_LOWER) + normalized);
-}
-
-export function normalizeKey(key: string): string {
-  return key.replace(/[^a-zA-Z]/g, "").toUpperCase();
-}
-
-const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+export { normalizeKey };
 
 /**
  * ヴィジュネル方陣（tabula recta）。行 = 鍵の文字、列 = 平文の文字。

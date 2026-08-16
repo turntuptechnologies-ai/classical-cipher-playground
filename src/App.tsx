@@ -13,6 +13,7 @@ import AtbashPage from "./pages/AtbashPage";
 import PigpenPage from "./pages/PigpenPage";
 import PlayfairPage from "./pages/PlayfairPage";
 import AdfgvxPage from "./pages/AdfgvxPage";
+import BifidPage from "./pages/BifidPage";
 import PolybiusPage from "./pages/PolybiusPage";
 import ColumnarPage from "./pages/ColumnarPage";
 import HomophonicPage from "./pages/HomophonicPage";
@@ -45,6 +46,7 @@ export default function App() {
           <Route path="/pigpen" element={<PigpenPage />} />
           <Route path="/playfair" element={<PlayfairPage />} />
           <Route path="/adfgvx" element={<AdfgvxPage />} />
+          <Route path="/bifid" element={<BifidPage />} />
           <Route path="/polybius" element={<PolybiusPage />} />
           <Route path="/columnar" element={<ColumnarPage />} />
           <Route path="/homophonic" element={<HomophonicPage />} />

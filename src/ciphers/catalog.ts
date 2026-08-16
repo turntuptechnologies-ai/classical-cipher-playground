@@ -130,6 +130,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
+    id: "bifid",
+    path: "/bifid",
+    name: "バイフィッド暗号",
+    era: "1901年 フランス（フェリックス・ドラステル）",
+    tagline: "ポリュビオス方陣で座標に分解し、行と列の並びを混ぜ合わせてから読み直す換字式暗号",
+    type: "換字式",
+  },
+  {
     id: "adfgvx",
     path: "/adfgvx",
     name: "ADFGVX暗号",

@@ -242,6 +242,21 @@ export const CHALLENGES: Challenge[] = [
     ],
     answer: "MEET AT THE OLD MILL",
   },
+  {
+    id: "bifid-1",
+    cipherId: "bifid",
+    cipherName: "バイフィッド暗号",
+    cipherPath: "/bifid",
+    difficulty: "hard",
+    title: "夜明けの合流",
+    prompt: "方陣で座標に分解したあと、行と列の並びを混ぜてから読み直されている。復号モードで一気に戻せる。",
+    ciphertext: "HSHABYWGWTHA",
+    hints: [
+      "方陣の鍵は6文字の英単語です。",
+      "方陣の鍵は SECRET です（バイフィッド暗号のページの復号モードに、暗号文と鍵をそのまま入れてみましょう）。",
+    ],
+    answer: "MEET ME AT DAWN",
+  },
 ];
 
 export function normalizeAnswer(value: string): string {

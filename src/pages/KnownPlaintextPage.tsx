@@ -39,6 +39,17 @@ export default function KnownPlaintextPage() {
           仕組みが複雑なぶん逆算の手順も複雑になります。ここでは仕組みがシンプルな
           <Link to="/vigenere" className="cipher-link">ヴィジュネル暗号</Link>を例に、考え方を体験してみましょう。
         </p>
+        <p className="note-text">
+          <Link to="/homophonic" className="cipher-link">ホモフォニック換字式暗号</Link>のようにコード表そのものが鍵になっている暗号でも、
+          クリブが分かればコードと文字の対応がその場で判明します。
+          <Link to="/porta" className="cipher-link">ポルタ暗号</Link>や
+          <Link to="/autokey" className="cipher-link">オートキー暗号</Link>のような多表式暗号では、
+          クリブから使用中の表や鍵そのものを直接絞り込めます。特にオートキー暗号は鍵が周期的に繰り返さず
+          <Link to="/cryptanalysis/kasiski" className="cipher-link">カシスキー試験</Link>が効かないぶん、
+          クリブが数少ない有効な手がかりになります。
+          <Link to="/bifid" className="cipher-link">バイフィッド暗号</Link>のような座標を混ぜ合わせる暗号でも、
+          クリブは方陣を推測する足がかりになります。
+        </p>
       </section>
 
       <section className="playground">

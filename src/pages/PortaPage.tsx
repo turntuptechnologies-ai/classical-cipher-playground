@@ -46,6 +46,12 @@ export default function PortaPage() {
           <Link to="/vigenere" className="cipher-link">ヴィジュネル暗号</Link>と誤って呼ばれるようになった暗号の考案者）
           とは、先に表を発表した功績を巡って論争になったと伝わっています。
         </p>
+        <p className="note-text">
+          ヴィジュネル暗号と同じく鍵が周期的に繰り返すため、
+          <Link to="/cryptanalysis/kasiski" className="cipher-link">カシスキー試験</Link>で鍵の長さを推測できます。
+          平文の一部が推測できれば、<Link to="/cryptanalysis/known-plaintext" className="cipher-link">既知平文攻撃</Link>
+          で使用中の表を直接絞り込むこともできます。
+        </p>
       </section>
 
       <section className="playground">

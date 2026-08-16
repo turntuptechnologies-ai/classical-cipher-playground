@@ -47,7 +47,9 @@ export default function AutokeyPage() {
           鍵が二度と同じパターンを繰り返さないため、
           <Link to="/cryptanalysis/kasiski" className="cipher-link">カシスキー試験</Link>
           で鍵の長さを推測することができません。ヴィジュネル暗号よりも解読が難しい、
-          という点では理にかなった発展形と言えます。
+          という点では理にかなった発展形と言えます。ただし平文の一部が推測できれば、
+          <Link to="/cryptanalysis/known-plaintext" className="cipher-link">既知平文攻撃</Link>
+          で初期鍵とその後のキーストリームが一気に判明してしまいます。
         </p>
       </section>
 

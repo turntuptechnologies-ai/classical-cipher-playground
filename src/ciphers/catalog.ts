@@ -82,6 +82,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
+    id: "porta",
+    path: "/porta",
+    name: "ポルタ暗号",
+    era: "1563年 ナポリ",
+    tagline: "鍵文字のペアで13種類の表を切り替える多表式暗号。暗号化と復号が同じ操作という珍しい性質を持つ",
+    type: "換字式",
+  },
+  {
     id: "vigenere",
     path: "/vigenere",
     name: "ヴィジュネル暗号",

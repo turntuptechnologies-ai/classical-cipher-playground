@@ -212,6 +212,21 @@ export const CHALLENGES: Challenge[] = [
     ],
     answer: "MEET AT NOON",
   },
+  {
+    id: "porta-1",
+    cipherId: "porta",
+    cipherName: "ポルタ暗号",
+    cipherPath: "/porta",
+    difficulty: "medium",
+    title: "港での落ち合い",
+    prompt: "この暗号は暗号化と復号がまったく同じ操作。鍵が分かれば、暗号文をそのまま同じ操作に通すだけでいい。",
+    ciphertext: "SRYB PK AUY ZPIUBK",
+    hints: [
+      "鍵は6文字の英単語です。",
+      "鍵は NAPLES です（ポルタ暗号のページの入力欄に暗号文と鍵をそのまま入れてみましょう）。",
+    ],
+    answer: "MEET AT THE HARBOR",
+  },
 ];
 
 export function normalizeAnswer(value: string): string {

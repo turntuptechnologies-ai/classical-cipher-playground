@@ -15,6 +15,7 @@ import PlayfairPage from "./pages/PlayfairPage";
 import AdfgvxPage from "./pages/AdfgvxPage";
 import PolybiusPage from "./pages/PolybiusPage";
 import ColumnarPage from "./pages/ColumnarPage";
+import HomophonicPage from "./pages/HomophonicPage";
 import ChallengesPage from "./pages/ChallengesPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
 import CryptanalysisPage from "./pages/CryptanalysisPage";
@@ -44,6 +45,7 @@ export default function App() {
           <Route path="/adfgvx" element={<AdfgvxPage />} />
           <Route path="/polybius" element={<PolybiusPage />} />
           <Route path="/columnar" element={<ColumnarPage />} />
+          <Route path="/homophonic" element={<HomophonicPage />} />
           <Route path="/cryptanalysis" element={<CryptanalysisPage />} />
           <Route path="/cryptanalysis/frequency" element={<FrequencyAnalysisPage />} />
           <Route path="/cryptanalysis/bruteforce" element={<BruteForcePage />} />

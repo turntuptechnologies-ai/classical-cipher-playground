@@ -197,6 +197,21 @@ export const CHALLENGES: Challenge[] = [
     ],
     answer: "SENDHELP",
   },
+  {
+    id: "homophonic-1",
+    cipherId: "homophonic",
+    cipherName: "ホモフォニック換字式暗号",
+    cipherPath: "/homophonic",
+    difficulty: "medium",
+    title: "集合場所",
+    prompt: "同じ文字でも違うコードで書かれていることがある。鍵の並び順どおりに00からコードが割り振られている。",
+    ciphertext: "64 01 01 82 20 82 66 72 72 66",
+    hints: [
+      "鍵は ZEBRASCDFGHIJKLMNOPQTUVWXY です（ホモフォニック換字式暗号のページに入力してみましょう）。",
+      "コード割り当て表と照らし合わせると、64→M, 01→E, 20→A, 82→T, 66→N, 72→O です。",
+    ],
+    answer: "MEET AT NOON",
+  },
 ];
 
 export function normalizeAnswer(value: string): string {

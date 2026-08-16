@@ -66,6 +66,14 @@ export const CIPHER_CATALOG: CipherInfo[] = [
     type: "換字式",
   },
   {
+    id: "homophonic",
+    path: "/homophonic",
+    name: "ホモフォニック換字式暗号",
+    era: "1401年 マントヴァ公国",
+    tagline: "1文字を複数のコードに対応させて出現頻度を均し、頻度分析に対抗する換字式暗号",
+    type: "換字式",
+  },
+  {
     id: "uesugi",
     path: "/uesugi",
     name: "上杉暗号",

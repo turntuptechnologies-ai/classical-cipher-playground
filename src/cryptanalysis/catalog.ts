@@ -42,7 +42,10 @@ export const CRYPTANALYSIS_CATALOG: CryptanalysisMethodInfo[] = [
     path: "/cryptanalysis/kasiski",
     name: "カシスキー試験",
     tagline: "暗号文中に繰り返し現れる文字列の間隔から、鍵の長さを推測する手法",
-    appliesTo: [{ name: "ヴィジュネル暗号", path: "/vigenere" }],
+    appliesTo: [
+      { name: "ヴィジュネル暗号", path: "/vigenere" },
+      { name: "ポルタ暗号", path: "/porta" },
+    ],
   },
   {
     id: "anagram",
@@ -66,6 +69,10 @@ export const CRYPTANALYSIS_CATALOG: CryptanalysisMethodInfo[] = [
       { name: "プレイフェア暗号", path: "/playfair" },
       { name: "ADFGVX暗号", path: "/adfgvx" },
       { name: "エニグマ暗号", path: "/enigma" },
+      { name: "ホモフォニック換字式暗号", path: "/homophonic" },
+      { name: "ポルタ暗号", path: "/porta" },
+      { name: "オートキー暗号", path: "/autokey" },
+      { name: "バイフィッド暗号", path: "/bifid" },
     ],
   },
 ];

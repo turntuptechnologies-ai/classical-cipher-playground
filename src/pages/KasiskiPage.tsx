@@ -28,7 +28,8 @@ export default function KasiskiPage() {
 
       <section className="explanation">
         <p>
-          <Link to="/vigenere" className="cipher-link">ヴィジュネル暗号</Link>のように鍵の文字ごとにずらし幅を変える暗号には、
+          <Link to="/vigenere" className="cipher-link">ヴィジュネル暗号</Link>や
+          <Link to="/porta" className="cipher-link">ポルタ暗号</Link>のように鍵の文字ごとに換字表を変える暗号には、
           <Link to="/cryptanalysis/frequency" className="cipher-link">頻度分析</Link>がそのままでは通用しません。
           そこでまず必要になるのが「鍵の長さ」を推測することです。
         </p>

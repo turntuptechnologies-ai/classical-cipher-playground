@@ -41,7 +41,9 @@ export default function BifidPage() {
           文字を置き換えるだけでなく並び順まで混ぜるため、
           <Link to="/cryptanalysis/frequency" className="cipher-link">頻度分析</Link>にも
           <Link to="/cryptanalysis/anagram" className="cipher-link">アナグラム法</Link>にも単純には対抗しにくい、
-          比較的堅牢な換字式暗号です。
+          比較的堅牢な換字式暗号です。それでも平文の一部が推測できれば、
+          <Link to="/cryptanalysis/known-plaintext" className="cipher-link">既知平文攻撃</Link>
+          が方陣を推測する足がかりになります。
         </p>
       </section>
 

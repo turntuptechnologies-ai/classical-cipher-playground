@@ -45,6 +45,9 @@ export default function HomophonicPage() {
         <p className="note-text">
           00〜99の100個のコードを、どの文字にいくつ割り当てるかは頻度によって決まっていますが、
           「どのコードがどの文字か」は鍵（26文字の並び順）によって変わります。
+          頻度分析には強くても、平文の一部が推測できれば
+          <Link to="/cryptanalysis/known-plaintext" className="cipher-link">既知平文攻撃</Link>
+          でコードと文字の対応がその場で判明してしまいます。
         </p>
       </section>
 

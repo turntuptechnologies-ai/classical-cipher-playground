@@ -1,5 +1,6 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import CaesarPage from "./pages/CaesarPage";
 import SubstitutionPage from "./pages/SubstitutionPage";
@@ -31,6 +32,7 @@ import KnownPlaintextPage from "./pages/KnownPlaintextPage";
 export default function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />

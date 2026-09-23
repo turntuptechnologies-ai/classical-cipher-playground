@@ -10,10 +10,6 @@ export default function CipherDropdown() {
   const isActive = CIPHER_CATALOG.some((cipher) => location.pathname === cipher.path);
 
   useEffect(() => {
-    setOpen(false);
-  }, [location.pathname]);
-
-  useEffect(() => {
     if (!open) return;
 
     const handlePointerDown = (event: PointerEvent) => {
@@ -24,12 +20,16 @@ export default function CipherDropdown() {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
+    // 戻る/進むはメニュー外のクリックを伴わないため、履歴移動でも閉じる
+    const handlePopState = () => setOpen(false);
 
     document.addEventListener("pointerdown", handlePointerDown);
     document.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("popstate", handlePopState);
     return () => {
       document.removeEventListener("pointerdown", handlePointerDown);
       document.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("popstate", handlePopState);
     };
   }, [open]);
 
@@ -47,7 +47,13 @@ export default function CipherDropdown() {
       {open && (
         <div className="dropdown-menu" role="menu">
           {CIPHER_CATALOG.map((cipher) => (
-            <Link key={cipher.id} to={cipher.path} role="menuitem" className="dropdown-item">
+            <Link
+              key={cipher.id}
+              to={cipher.path}
+              role="menuitem"
+              className="dropdown-item"
+              onClick={() => setOpen(false)}
+            >
               {cipher.name}
             </Link>
           ))}

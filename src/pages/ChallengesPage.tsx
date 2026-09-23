@@ -1,14 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CHALLENGES, DIFFICULTY_LABEL } from "../challenges/data";
 import { getSolvedIds } from "../challenges/progress";
 
 export default function ChallengesPage() {
-  const [solved, setSolved] = useState<Set<string>>(new Set());
-
-  useEffect(() => {
-    setSolved(getSolvedIds());
-  }, []);
+  // マウント時に一度だけ読み込む。localStorageが使えない環境ではgetSolvedIdsが空Setを返す
+  const [solved] = useState<Set<string>>(getSolvedIds);
 
   return (
     <div className="challenges-page">

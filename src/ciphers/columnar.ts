@@ -23,10 +23,11 @@ export function columnarEncode(text: string, keyword: string): string {
   const cols = keyword.replace(/[^A-Za-z]/g, "").length;
   if (cols < 2 || text.length === 0) return text;
   const order = transpositionOrder(keyword);
-  const rows = Math.ceil(text.length / cols);
+  const chars = [...text];
+  const rows = Math.ceil(chars.length / cols);
   const grid: (string | null)[][] = Array.from({ length: rows }, () => new Array(cols).fill(null));
 
-  [...text].forEach((ch, i) => {
+  chars.forEach((ch, i) => {
     grid[Math.floor(i / cols)][i % cols] = ch;
   });
 
@@ -43,7 +44,9 @@ export function columnarEncode(text: string, keyword: string): string {
 // 候補を試行錯誤する解読（アナグラム法）から呼べるように、キーワード解決とは切り離してある。
 export function decodeColumns(text: string, cols: number, order: number[]): string {
   if (cols < 2 || text.length === 0) return text;
-  const n = text.length;
+  // 絵文字などサロゲートペアの文字も1マスとして数える(暗号化側の[...text]とそろえる)
+  const chars = [...text];
+  const n = chars.length;
   const rows = Math.ceil(n / cols);
 
   const filled: boolean[][] = Array.from({ length: rows }, () => new Array(cols).fill(false));
@@ -56,7 +59,7 @@ export function decodeColumns(text: string, cols: number, order: number[]): stri
   for (const colIdx of order) {
     for (let r = 0; r < rows; r++) {
       if (filled[r][colIdx]) {
-        grid[r][colIdx] = text[idx];
+        grid[r][colIdx] = chars[idx];
         idx++;
       }
     }
@@ -79,10 +82,11 @@ export function columnarDecode(text: string, keyword: string): string {
 
 export function columnarGrid(text: string, keyword: string): (string | null)[][] {
   const cols = Math.max(1, keyword.replace(/[^A-Za-z]/g, "").length);
-  const rows = Math.ceil(text.length / cols) || 1;
+  const chars = [...text];
+  const rows = Math.ceil(chars.length / cols) || 1;
   const grid: (string | null)[][] = Array.from({ length: rows }, () => new Array(cols).fill(null));
 
-  [...text].forEach((ch, i) => {
+  chars.forEach((ch, i) => {
     grid[Math.floor(i / cols)][i % cols] = ch;
   });
 

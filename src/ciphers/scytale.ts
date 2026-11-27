@@ -13,10 +13,11 @@ function buildFilledGrid(length: number, faces: number): boolean[][] {
 
 export function scytaleEncode(text: string, faces: number): string {
   if (faces < 2 || text.length === 0) return text;
-  const cols = Math.ceil(text.length / faces);
+  const chars = [...text];
+  const cols = Math.ceil(chars.length / faces);
   const grid: (string | null)[][] = Array.from({ length: faces }, () => new Array(cols).fill(null));
 
-  [...text].forEach((char, i) => {
+  chars.forEach((char, i) => {
     const row = Math.floor(i / cols);
     const col = i % cols;
     grid[row][col] = char;
@@ -33,7 +34,9 @@ export function scytaleEncode(text: string, faces: number): string {
 
 export function scytaleDecode(text: string, faces: number): string {
   if (faces < 2 || text.length === 0) return text;
-  const filled = buildFilledGrid(text.length, faces);
+  // 絵文字などサロゲートペアの文字も1マスとして数える(暗号化側の[...text]とそろえる)
+  const chars = [...text];
+  const filled = buildFilledGrid(chars.length, faces);
   const cols = filled[0]?.length ?? 0;
 
   const grid: (string | null)[][] = Array.from({ length: faces }, () => new Array(cols).fill(null));
@@ -41,7 +44,7 @@ export function scytaleDecode(text: string, faces: number): string {
   for (let col = 0; col < cols; col++) {
     for (let row = 0; row < faces; row++) {
       if (filled[row][col]) {
-        grid[row][col] = text[idx];
+        grid[row][col] = chars[idx];
         idx++;
       }
     }
@@ -58,10 +61,11 @@ export function scytaleDecode(text: string, faces: number): string {
 
 export function scytaleGrid(text: string, faces: number): (string | null)[][] {
   const clampedFaces = Math.max(2, faces);
-  const cols = Math.ceil(text.length / clampedFaces) || 1;
+  const chars = [...text];
+  const cols = Math.ceil(chars.length / clampedFaces) || 1;
   const grid: (string | null)[][] = Array.from({ length: clampedFaces }, () => new Array(cols).fill(null));
 
-  [...text].forEach((char, i) => {
+  chars.forEach((char, i) => {
     const row = Math.floor(i / cols);
     const col = i % cols;
     grid[row][col] = char;

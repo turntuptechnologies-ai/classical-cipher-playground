@@ -71,21 +71,24 @@ function buildIndexGrid(n: number, rows: number, cols: number): (number | null)[
 
 export function geometricEncode(text: string, rows: number, route: Route): string {
   if (rows < 2 || text.length === 0) return text;
-  const cols = Math.ceil(text.length / rows);
-  const grid = buildIndexGrid(text.length, rows, cols);
+  // 絵文字などサロゲートペアの文字も1マスとして数え、読み出しでペアを分断しない
+  const chars = [...text];
+  const cols = Math.ceil(chars.length / rows);
+  const grid = buildIndexGrid(chars.length, rows, cols);
   const order = getRouteOrder(rows, cols, route);
 
   let output = "";
   for (const [r, c] of order) {
     const idx = grid[r][c];
-    if (idx !== null) output += text[idx];
+    if (idx !== null) output += chars[idx];
   }
   return output;
 }
 
 export function geometricDecode(text: string, rows: number, route: Route): string {
   if (rows < 2 || text.length === 0) return text;
-  const n = text.length;
+  const chars = [...text];
+  const n = chars.length;
   const cols = Math.ceil(n / rows);
   const grid = buildIndexGrid(n, rows, cols);
   const order = getRouteOrder(rows, cols, route);
@@ -95,7 +98,7 @@ export function geometricDecode(text: string, rows: number, route: Route): strin
   for (const [r, c] of order) {
     const idx = grid[r][c];
     if (idx !== null) {
-      result[idx] = text[k];
+      result[idx] = chars[k];
       k++;
     }
   }
@@ -104,10 +107,11 @@ export function geometricDecode(text: string, rows: number, route: Route): strin
 
 export function geometricGrid(text: string, rows: number): (string | null)[][] {
   const clampedRows = Math.max(2, rows);
-  const cols = Math.ceil(text.length / clampedRows) || 1;
+  const chars = [...text];
+  const cols = Math.ceil(chars.length / clampedRows) || 1;
   const grid: (string | null)[][] = Array.from({ length: clampedRows }, () => new Array(cols).fill(null));
 
-  [...text].forEach((char, i) => {
+  chars.forEach((char, i) => {
     const r = Math.floor(i / cols);
     const c = i % cols;
     grid[r][c] = char;

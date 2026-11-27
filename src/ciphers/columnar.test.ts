@@ -58,6 +58,32 @@ describe("columnarEncode / columnarDecode with characters outside the BMP", () =
   });
 });
 
+describe("keywords containing letters that change length when uppercased", () => {
+  // ßは大文字化するとSSになる。列数と読み出し順を同じ正規化から作らないと、存在しない列を読みにいく
+  const sorted = (s: string) => [...s].sort().join("");
+
+  it("treats ß as SS (Straße -> STRASSE, 7 columns)", () => {
+    const cipher = columnarEncode("ATTACKATDAWN", "Straße");
+    expect(cipher).not.toContain("undefined");
+    expect(sorted(cipher)).toBe(sorted("ATTACKATDAWN"));
+    expect(cipher).toBe(columnarEncode("ATTACKATDAWN", "STRASSE"));
+    expect(columnarDecode(cipher, "Straße")).toBe("ATTACKATDAWN");
+  });
+
+  // 大文字化で文字数か文字の種類が変わり、列数と読み出し順の長さがずれていた17文字
+  it.each([..."ßıŉſǰẖẗẘẙẚﬀﬁﬂﬃﬄﬅﬆ"])("round-trips with %s in the keyword", (ch) => {
+    const keyword = `KEY${ch}WORD`;
+    const cipher = columnarEncode("THEQUICKBROWNFOX", keyword);
+    expect(sorted(cipher)).toBe(sorted("THEQUICKBROWNFOX"));
+    expect(columnarDecode(cipher, keyword)).toBe("THEQUICKBROWNFOX");
+  });
+
+  it("sizes the grid by the same letters the page displays as column headers", () => {
+    // ColumnarPage は toUpperCase() してから A-Z を残した文字を列の見出しにしている
+    expect(columnarGrid("ABCDEFG", "Straße")[0]).toHaveLength(7);
+  });
+});
+
 describe("columnarGrid", () => {
   it("writes text row-major into a grid sized by the keyword length", () => {
     expect(columnarGrid("HELLOWORLD", "ABC")).toEqual([

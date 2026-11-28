@@ -172,11 +172,12 @@ export function enigmaProcess(text: string, settings: EnigmaSettings, plugboardP
   let output = "";
 
   for (const rawChar of text) {
-    const upper = rawChar.toUpperCase();
-    if (!/^[A-Z]$/.test(upper)) {
+    // 大文字化してから判定すると ı・ſ が I・S として暗号化され、往復で元の文字に戻れないため、元の文字で判定する
+    if (!/^[A-Za-z]$/.test(rawChar)) {
       output += rawChar;
       continue;
     }
+    const upper = rawChar.toUpperCase();
 
     stepRotors(left, middle, right);
 

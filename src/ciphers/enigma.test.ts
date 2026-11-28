@@ -44,6 +44,20 @@ describe("enigmaProcess", () => {
     expect(result.output[0]).not.toBe(result.output[2]);
   });
 
+  // ı(ドットなしi)・ſ(長いs)は大文字化すると I・S になるが、英字ではないので記号と同じく素通しする
+  it.each(["ı", "ſ"])("passes %s through unchanged without stepping the rotors", (ch) => {
+    const result = enigmaProcess(`A${ch}A`, CANONICAL_SETTINGS, "");
+    const withoutIt = enigmaProcess("AA", CANONICAL_SETTINGS, "").output;
+    expect(result.steps).toHaveLength(2);
+    expect(result.output).toBe(`${withoutIt[0]}${ch}${withoutIt[1]}`);
+  });
+
+  it("is reciprocal for plaintext containing ı and ſ", () => {
+    const plain = "Iıſs Straße";
+    const cipher = enigmaProcess(plain, CANONICAL_SETTINGS, "AB").output;
+    expect(enigmaProcess(cipher, CANONICAL_SETTINGS, "AB").output).toBe(plain);
+  });
+
   it("reproduces the double-stepping anomaly", () => {
     // 右(III, notch V=21)をU(20)、中央(II, notch E=4)をD(3)に置く。
     // 3打鍵で中央は 3(不動) -> 4(右のnotch到達で連動) -> 5(中央自身がnotchで二重ステップ) と進む。

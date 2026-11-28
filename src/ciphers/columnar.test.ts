@@ -43,6 +43,21 @@ describe("columnarEncode / columnarDecode round-trip", () => {
   });
 });
 
+describe("columnarEncode / columnarDecode with characters outside the BMP", () => {
+  // 絵文字などはサロゲートペアで表されるため、UTF-16単位で数えると升目の形が変わってしまう
+  const LONE_SURROGATE = /[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/;
+
+  it.each([
+    ["😀", "DA"],
+    ["ATTACK AT DAWN 😀 SEE YOU", "SECRET"],
+    ["𠮷野家で🔑を受け取る", "KEYWORD"],
+  ] as const)("round-trips %s with keyword %s", (text, keyword) => {
+    const cipher = columnarEncode(text, keyword);
+    expect(cipher).not.toMatch(LONE_SURROGATE);
+    expect(columnarDecode(cipher, keyword)).toBe(text);
+  });
+});
+
 describe("columnarGrid", () => {
   it("writes text row-major into a grid sized by the keyword length", () => {
     expect(columnarGrid("HELLOWORLD", "ABC")).toEqual([
@@ -51,5 +66,9 @@ describe("columnarGrid", () => {
       ["O", "R", "L"],
       ["D", null, null],
     ]);
+  });
+
+  it("counts a character outside the BMP as one cell", () => {
+    expect(columnarGrid("😀AB", "ABC")).toEqual([["😀", "A", "B"]]);
   });
 });

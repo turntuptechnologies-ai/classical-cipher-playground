@@ -18,10 +18,11 @@ function railPattern(length: number, rails: number): number[] {
 export function railFenceEncode(text: string, rails: number): string {
   if (rails < 2) return text;
 
-  const pattern = railPattern(text.length, rails);
+  const chars = [...text];
+  const pattern = railPattern(chars.length, rails);
   const rows: string[] = Array.from({ length: rails }, () => "");
 
-  [...text].forEach((char, i) => {
+  chars.forEach((char, i) => {
     rows[pattern[i]] += char;
   });
 
@@ -31,12 +32,14 @@ export function railFenceEncode(text: string, rails: number): string {
 export function railFenceDecode(text: string, rails: number): string {
   if (rails < 2) return text;
 
-  const pattern = railPattern(text.length, rails);
+  // 絵文字などサロゲートペアの文字も1文字として数える(暗号化側の[...text]とそろえる)
+  const chars = [...text];
+  const pattern = railPattern(chars.length, rails);
   const rowLengths = Array.from({ length: rails }, (_, r) => pattern.filter((p) => p === r).length);
 
   let pos = 0;
-  const rows: string[] = rowLengths.map((len) => {
-    const chunk = text.slice(pos, pos + len);
+  const rows: string[][] = rowLengths.map((len) => {
+    const chunk = chars.slice(pos, pos + len);
     pos += len;
     return chunk;
   });
@@ -53,10 +56,11 @@ export function railFenceDecode(text: string, rails: number): string {
 
 export function railFenceGrid(text: string, rails: number): (string | null)[][] {
   const clampedRails = Math.max(2, rails);
-  const pattern = railPattern(text.length, clampedRails);
-  const grid: (string | null)[][] = Array.from({ length: clampedRails }, () => new Array(text.length).fill(null));
+  const chars = [...text];
+  const pattern = railPattern(chars.length, clampedRails);
+  const grid: (string | null)[][] = Array.from({ length: clampedRails }, () => new Array(chars.length).fill(null));
 
-  [...text].forEach((char, col) => {
+  chars.forEach((char, col) => {
     grid[pattern[col]][col] = char;
   });
 

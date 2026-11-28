@@ -20,9 +20,10 @@ export function transpositionRanks(keyword: string): number[] {
 }
 
 export function columnarEncode(text: string, keyword: string): string {
-  const cols = keyword.replace(/[^A-Za-z]/g, "").length;
-  if (cols < 2 || text.length === 0) return text;
+  // 列数は読み出し順と同じ正規化から求める(ßはSSになり2列分)
   const order = transpositionOrder(keyword);
+  const cols = order.length;
+  if (cols < 2 || text.length === 0) return text;
   const chars = [...text];
   const rows = Math.ceil(chars.length / cols);
   const grid: (string | null)[][] = Array.from({ length: rows }, () => new Array(cols).fill(null));
@@ -75,13 +76,13 @@ export function decodeColumns(text: string, cols: number, order: number[]): stri
 }
 
 export function columnarDecode(text: string, keyword: string): string {
-  const cols = keyword.replace(/[^A-Za-z]/g, "").length;
-  if (cols < 2 || text.length === 0) return text;
-  return decodeColumns(text, cols, transpositionOrder(keyword));
+  const order = transpositionOrder(keyword);
+  if (order.length < 2 || text.length === 0) return text;
+  return decodeColumns(text, order.length, order);
 }
 
 export function columnarGrid(text: string, keyword: string): (string | null)[][] {
-  const cols = Math.max(1, keyword.replace(/[^A-Za-z]/g, "").length);
+  const cols = Math.max(1, transpositionOrder(keyword).length);
   const chars = [...text];
   const rows = Math.ceil(chars.length / cols) || 1;
   const grid: (string | null)[][] = Array.from({ length: rows }, () => new Array(cols).fill(null));

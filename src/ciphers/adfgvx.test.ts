@@ -43,6 +43,9 @@ describe("adfgvxEncode / adfgvxDecode round-trip", () => {
     ["SEND REINFORCEMENTS 1918", "KEYWORD", "CIPHER"],
     ["A", "X", "AB"],
     ["HELLO WORLD 123", "PASSWORD", "LONGKEYWORD"],
+    // 転置鍵の ß は大文字化すると SS になる(列転置と同じ正規化)
+    ["ATTACK AT DAWN", "GERMANY", "Straße"],
+    ["A", "", "ßAA"],
   ] as const)("round-trips %s (square key %s, transposition key %s)", (text, squareKey, transKey) => {
     const normalized = text.toUpperCase().replace(/[^A-Z0-9]/g, "");
     const cipher = adfgvxEncode(text, squareKey, transKey);
